@@ -1,0 +1,386 @@
+/* =====================================================
+   Eyeshot Tourism – Custom Site Styles
+   =====================================================
+   Sections:
+     1.  Global reset / base
+     2.  Typography
+     3.  Buttons
+     4.  Navigation
+     5.  Page padding (global)
+     6.  Services page  (ID 26)
+     7.  Gallery page   (ID 28)
+     8.  Contact page   (ID 25)
+     9.  WooCommerce – product cards
+    10.  WooCommerce – cart / checkout
+    11.  Cover / hero blocks
+    12.  Forms
+    13.  Responsive
+   ===================================================== */
+
+
+/* --------------------------------------------------
+   1. Global reset / base
+   -------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* --------------------------------------------------
+   2. Typography
+   -------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.wp-block-heading {
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+
+p {
+    line-height: 1.75;
+}
+
+a {
+    text-decoration-skip-ink: auto;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+
+/* --------------------------------------------------
+   3. Buttons
+   -------------------------------------------------- */
+.wp-block-button__link,
+.wc-block-components-button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input[type="submit"],
+.woocommerce #respond input#submit {
+    border-radius: 6px !important;
+    padding: 13px 28px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.025em !important;
+    transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+    text-decoration: none !important;
+}
+
+.wp-block-button__link:hover,
+.wc-block-components-button:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18) !important;
+}
+
+.wp-block-button__link:active,
+.woocommerce a.button:active {
+    transform: translateY(0);
+    box-shadow: none !important;
+}
+
+
+/* --------------------------------------------------
+   4. Navigation
+   -------------------------------------------------- */
+.wp-block-navigation__container .wp-block-navigation-item__content {
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 5px;
+    transition: background-color 0.18s ease;
+}
+
+.wp-block-navigation__container .wp-block-navigation-item__content:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+
+/* --------------------------------------------------
+   5. Page padding – global
+   -------------------------------------------------- */
+
+/*
+ * With useRootPaddingAwareAlignments enabled, `alignfull` blocks escape the
+ * root padding. Each section sets its own inline padding via style= attributes.
+ * However, `alignwide` children inside a constrained group use auto-margins
+ * calculated against the group's box width (before padding), which can push
+ * content to the viewport edges on certain viewport sizes.
+ *
+ * We enforce a safe minimum content width so nothing ever touches the edges.
+ */
+.wp-block-group.alignfull.is-layout-constrained > * {
+    max-width: calc(100% - 2 * clamp(1.5rem, 6vw, 2rem));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Don't collapse sections that deliberately opt out of the constraint */
+.wp-block-group.alignfull.is-layout-constrained > .alignfull {
+    max-width: 100%;
+    margin-left: calc(-1 * clamp(1.5rem, 6vw, 2rem));
+    margin-right: calc(-1 * clamp(1.5rem, 6vw, 2rem));
+}
+
+/* Wide children: cap at wideSize minus gutters */
+.wp-block-group.alignfull.is-layout-constrained > .alignwide {
+    max-width: min(80rem, calc(100% - 2 * clamp(1.5rem, 6vw, 2rem)));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* --------------------------------------------------
+   6. Services page (page-id-26)
+   -------------------------------------------------- */
+
+/* Ensure the wide columns never touch viewport edges */
+.page-id-26 .wp-block-columns.alignwide {
+    max-width: min(80rem, calc(100% - 2 * clamp(1.5rem, 6vw, 2rem)));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Service feature items – subtle card lift */
+.page-id-26 .wp-block-group:not(.alignfull):not(.alignwide) {
+    border-radius: 10px;
+}
+
+/* Banner / grey divider row */
+#service-area {
+    padding-left: clamp(1.5rem, 6vw, 2rem) !important;
+    padding-right: clamp(1.5rem, 6vw, 2rem) !important;
+}
+
+
+/* --------------------------------------------------
+   7. Gallery page (page-id-28)
+   -------------------------------------------------- */
+
+/* Constrain the wide gallery within its padded section */
+.page-id-28 .wp-block-gallery.alignwide {
+    max-width: min(80rem, calc(100% - 2 * clamp(1.5rem, 6vw, 2rem)));
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100%;
+}
+
+/* Image tiles – rounded corners + smooth hover */
+.page-id-28 .wp-block-gallery figure.wp-block-image,
+.page-id-28 .wp-block-gallery .wp-block-image {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.page-id-28 .wp-block-gallery figure.wp-block-image img {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border-radius: 10px;
+}
+
+.page-id-28 .wp-block-gallery figure.wp-block-image:hover img {
+    transform: scale(1.04);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Consistent gap between tiles */
+.page-id-28 .wp-block-gallery.has-nested-images {
+    gap: 14px !important;
+}
+
+/* Portfolio cover blocks below the gallery */
+.page-id-28 .wp-block-cover {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.page-id-28 .wp-block-cover:hover {
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+/* Constrain portfolio columns too */
+.page-id-28 .wp-block-columns.alignwide {
+    max-width: min(80rem, calc(100% - 2 * clamp(1.5rem, 6vw, 2rem)));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* --------------------------------------------------
+   8. Contact page (page-id-25)
+   -------------------------------------------------- */
+
+/* Rounded map embed */
+.page-id-25 iframe {
+    border-radius: 12px;
+    display: block;
+}
+
+/* Contact info card */
+.page-id-25 .wp-block-column.is-vertically-aligned-stretch {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+/* --------------------------------------------------
+   9. WooCommerce – product cards
+   -------------------------------------------------- */
+ul.products li.product,
+.wc-block-grid__product {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+ul.products li.product:hover,
+.wc-block-grid__product:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+ul.products li.product img,
+.wc-block-grid__product-image img {
+    transition: transform 0.35s ease;
+    display: block;
+    width: 100%;
+}
+
+ul.products li.product:hover img,
+.wc-block-grid__product:hover .wc-block-grid__product-image img {
+    transform: scale(1.05);
+}
+
+.woocommerce .price,
+.wc-block-grid__product-price {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.woocommerce span.onsale {
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+
+/* --------------------------------------------------
+  10. WooCommerce – cart & checkout
+   -------------------------------------------------- */
+.woocommerce-cart .woocommerce,
+.woocommerce-checkout .woocommerce {
+    padding-left: clamp(1.5rem, 6vw, 2rem);
+    padding-right: clamp(1.5rem, 6vw, 2rem);
+}
+
+.woocommerce table.shop_table {
+    border-radius: 8px;
+    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.woocommerce-checkout #payment {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.woocommerce-checkout #payment ul.payment_methods {
+    border-radius: 8px 8px 0 0;
+}
+
+/* Payment method icons */
+.woocommerce-checkout #payment ul.payment_methods li {
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.woocommerce-checkout #payment ul.payment_methods li:last-child {
+    border-bottom: none;
+}
+
+
+/* --------------------------------------------------
+  11. Cover / hero blocks
+   -------------------------------------------------- */
+.wp-block-cover {
+    overflow: hidden;
+}
+
+.wp-block-cover.alignfull {
+    border-radius: 0;
+}
+
+.wp-block-cover:not(.alignfull):not(.alignwide) {
+    border-radius: 10px;
+}
+
+
+/* --------------------------------------------------
+  12. Forms
+   -------------------------------------------------- */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+    border-radius: 6px !important;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* --------------------------------------------------
+  13. Responsive
+   -------------------------------------------------- */
+@media (max-width: 768px) {
+    /* Ensure minimum padding is always present on mobile */
+    .wp-block-group.alignfull.is-layout-constrained > *,
+    .wp-block-group.alignfull.is-layout-constrained > .alignwide {
+        max-width: calc(100% - 3rem);
+    }
+
+    .page-id-28 .wp-block-gallery.alignwide {
+        max-width: calc(100% - 3rem);
+    }
+
+    .page-id-28 .wp-block-gallery.has-nested-images {
+        gap: 8px !important;
+    }
+
+    .wp-block-button__link,
+    .woocommerce a.button,
+    .woocommerce button.button {
+        padding: 12px 22px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .wp-block-group.alignfull.is-layout-constrained > *,
+    .wp-block-group.alignfull.is-layout-constrained > .alignwide {
+        max-width: calc(100% - 2rem);
+    }
+}
