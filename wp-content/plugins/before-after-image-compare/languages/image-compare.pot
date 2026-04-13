@@ -1,0 +1,97 @@
+# Copyright (C) 2025 bPlugins
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Before After Image Comparison - Block 1.1.9\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/before-after-image-compare\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-04-15T11:04:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: image-compare\n"
+
+#. Plugin Name of the plugin
+#: D:\wp\websites\muradwahid\app\public\wp-content\plugins\before-after-image-compare\plugin.php
+msgid "Before After Image Comparison - Block"
+msgstr ""
+
+#. Description of the plugin
+#: D:\wp\websites\muradwahid\app\public\wp-content\plugins\before-after-image-compare\plugin.php
+msgid "Compare and filter between two images"
+msgstr ""
+
+#. Author of the plugin
+#: D:\wp\websites\muradwahid\app\public\wp-content\plugins\before-after-image-compare\plugin.php
+msgid "bPlugins"
+msgstr ""
+
+#. Author URI of the plugin
+#: D:\wp\websites\muradwahid\app\public\wp-content\plugins\before-after-image-compare\plugin.php
+msgid "https://bplugins.com"
+msgstr ""
+
+#: plugin.php:137
+msgid "Go Pro!"
+msgstr ""
+
+#: build/view.js:2
+msgid "Before Img"
+msgstr ""
+
+#: build/view.js:2
+msgid "After Img"
+msgstr ""
+
+#: build/block.json
+msgctxt "block title"
+msgid "Image Compare"
+msgstr ""
+
+#: build/block.json
+msgctxt "block description"
+msgid "Compare and filter between two images."
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "image comparison"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "image compare"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "image filter"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "visual comparison"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "before and after image"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "beaf"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "before after"
+msgstr ""
+
+#: build/block.json
+msgctxt "block keyword"
+msgid "before after image"
+msgstr ""

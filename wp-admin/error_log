@@ -1,0 +1,108 @@
+[27-Nov-2025 06:18:27 UTC] PHP Warning:  Undefined array key "id" in /home/eyesrzcn/public_html/wp-includes/class-wp-list-util.php on line 170
+[27-Nov-2025 06:18:27 UTC] PHP Warning:  Undefined array key "id" in /home/eyesrzcn/public_html/wp-includes/class-wp-list-util.php on line 170
+[27-Nov-2025 06:18:27 UTC] PHP Warning:  Undefined array key "id" in /home/eyesrzcn/public_html/wp-includes/class-wp-list-util.php on line 170
+[24-Dec-2025 10:15:10 UTC] PHP Warning:  Undefined property: WP_Ajax_Upgrader_Skin::$api in /home/eyesrzcn/public_html/wp-admin/includes/class-theme-upgrader.php on line 160
+[24-Dec-2025 10:15:11 UTC] PHP Warning:  Undefined array key "action" in /home/eyesrzcn/public_html/wp-content/plugins/cookieadmin-pro/includes/functions.php on line 290
+[24-Dec-2025 10:15:11 UTC] PHP Warning:  Undefined array key "action" in /home/eyesrzcn/public_html/wp-content/plugins/loginizer-security/functions.php on line 71
+[24-Dec-2025 10:16:39 UTC] PHP Warning:  Array to string conversion in /home/eyesrzcn/public_html/wp-includes/formatting.php on line 1128
+[24-Dec-2025 10:16:39 UTC] PHP Warning:  Array to string conversion in /home/eyesrzcn/public_html/wp-includes/formatting.php on line 1128
+[24-Dec-2025 10:16:39 UTC] PHP Warning:  Array to string conversion in /home/eyesrzcn/public_html/wp-includes/formatting.php on line 1128
+[24-Dec-2025 10:16:39 UTC] PHP Warning:  Array to string conversion in /home/eyesrzcn/public_html/wp-includes/formatting.php on line 1128
+[24-Dec-2025 10:19:54 UTC] PHP Warning:  Array to string conversion in /home/eyesrzcn/public_html/wp-includes/formatting.php on line 1128
+[24-Dec-2025 10:19:54 UTC] PHP Warning:  Array to string conversion in /home/eyesrzcn/public_html/wp-includes/formatting.php on line 1128
+[24-Dec-2025 10:19:54 UTC] PHP Warning:  Array to string conversion in /home/eyesrzcn/public_html/wp-includes/formatting.php on line 1128
+[24-Dec-2025 10:20:50 UTC] PHP Warning:  Array to string conversion in /home/eyesrzcn/public_html/wp-includes/formatting.php on line 1128
+[24-Dec-2025 10:20:50 UTC] PHP Warning:  Array to string conversion in /home/eyesrzcn/public_html/wp-includes/formatting.php on line 1128
+[24-Dec-2025 10:20:50 UTC] PHP Warning:  Array to string conversion in /home/eyesrzcn/public_html/wp-includes/formatting.php on line 1128
+[24-Dec-2025 10:20:50 UTC] PHP Warning:  Array to string conversion in /home/eyesrzcn/public_html/wp-includes/formatting.php on line 1128
+[04-Jan-2026 07:54:48 UTC] PHP Warning:  Undefined array key "dynamic" in /home/eyesrzcn/public_html/wp-content/plugins/seo-by-rank-math/includes/admin/importers/class-aioseo.php on line 619
+[04-Jan-2026 07:54:48 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/eyesrzcn/public_html/wp-content/plugins/seo-by-rank-math/includes/admin/importers/class-aioseo.php on line 619
+[04-Jan-2026 10:20:38 UTC] PHP Warning:  Undefined array key "dynamic" in /home/eyesrzcn/public_html/wp-content/plugins/seo-by-rank-math/includes/admin/importers/class-aioseo.php on line 619
+[04-Jan-2026 10:20:38 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/eyesrzcn/public_html/wp-content/plugins/seo-by-rank-math/includes/admin/importers/class-aioseo.php on line 619
+[04-Jan-2026 10:26:55 UTC] WordPress database error Table 'eyesrzcn_wp707.wp1l_rank_math_analytics_objects' doesn't exist for query SELECT COUNT(id) FROM wp1l_rank_math_analytics_objects made by do_action('admin_init'), WP_Hook->do_action, WP_Hook->apply_filters, RankMath\Analytics\Workflow\OAuth->reconnect_google, RankMath\Admin\Database\Query_Builder->getVar, RankMath\Admin\Database\Query_Builder->one, RankMath\Admin\Database\Query_Builder->get_row, RankMath\Admin\Database\Query_Builder->run
+[05-Jan-2026 12:24:50 UTC] WordPress database error Error writing file '/tmp/.mysql/#sql-temptable-3818ad-1aeec09-11e5.MAD' (Errcode: 28 "No space left on device") for query SHOW COLUMNS FROM wp1l_extendify_agent_events made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\ChatHistoryController::init, Extendify\Agent\Controllers\ChatHistoryController::setupChatHistoryTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'id' for query ALTER TABLE wp1l_extendify_agent_events ADD COLUMN id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\ChatHistoryController::init, Extendify\Agent\Controllers\ChatHistoryController::setupChatHistoryTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'created_at' for query ALTER TABLE wp1l_extendify_agent_events ADD COLUMN created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\ChatHistoryController::init, Extendify\Agent\Controllers\ChatHistoryController::setupChatHistoryTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'event_id' for query ALTER TABLE wp1l_extendify_agent_events ADD COLUMN event_id VARCHAR(64) NOT NULL made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\ChatHistoryController::init, Extendify\Agent\Controllers\ChatHistoryController::setupChatHistoryTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'type' for query ALTER TABLE wp1l_extendify_agent_events ADD COLUMN type VARCHAR(64) NOT NULL made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\ChatHistoryController::init, Extendify\Agent\Controllers\ChatHistoryController::setupChatHistoryTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'details' for query ALTER TABLE wp1l_extendify_agent_events ADD COLUMN details LONGTEXT made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\ChatHistoryController::init, Extendify\Agent\Controllers\ChatHistoryController::setupChatHistoryTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'user_id' for query ALTER TABLE wp1l_extendify_agent_events ADD COLUMN user_id BIGINT UNSIGNED NOT NULL made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\ChatHistoryController::init, Extendify\Agent\Controllers\ChatHistoryController::setupChatHistoryTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Disk got full writing 'information_schema.(temporary)' (Errcode: 28 "No space left on device") for query SHOW COLUMNS FROM wp1l_extendify_agent_workflows made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\WorkflowHistoryController::init, Extendify\Agent\Controllers\WorkflowHistoryController::setupWorkflowsTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'id' for query ALTER TABLE wp1l_extendify_agent_workflows ADD COLUMN id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\WorkflowHistoryController::init, Extendify\Agent\Controllers\WorkflowHistoryController::setupWorkflowsTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'workflow_id' for query ALTER TABLE wp1l_extendify_agent_workflows ADD COLUMN workflow_id VARCHAR(64) NOT NULL made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\WorkflowHistoryController::init, Extendify\Agent\Controllers\WorkflowHistoryController::setupWorkflowsTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'answer_id' for query ALTER TABLE wp1l_extendify_agent_workflows ADD COLUMN answer_id VARCHAR(64) NOT NULL made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\WorkflowHistoryController::init, Extendify\Agent\Controllers\WorkflowHistoryController::setupWorkflowsTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'error_msg' for query ALTER TABLE wp1l_extendify_agent_workflows ADD COLUMN error_msg TEXT made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\WorkflowHistoryController::init, Extendify\Agent\Controllers\WorkflowHistoryController::setupWorkflowsTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'agent_name' for query ALTER TABLE wp1l_extendify_agent_workflows ADD COLUMN agent_name VARCHAR(64) NOT NULL made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\WorkflowHistoryController::init, Extendify\Agent\Controllers\WorkflowHistoryController::setupWorkflowsTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'status' for query ALTER TABLE wp1l_extendify_agent_workflows ADD COLUMN status VARCHAR(20) NOT NULL made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\WorkflowHistoryController::init, Extendify\Agent\Controllers\WorkflowHistoryController::setupWorkflowsTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'user_id' for query ALTER TABLE wp1l_extendify_agent_workflows ADD COLUMN user_id BIGINT UNSIGNED NOT NULL made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\WorkflowHistoryController::init, Extendify\Agent\Controllers\WorkflowHistoryController::setupWorkflowsTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Duplicate column name 'created_at' for query ALTER TABLE wp1l_extendify_agent_workflows ADD COLUMN created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('plugins_loaded'), WP_Hook->do_action, WP_Hook->apply_filters, {closure}, Extendify->__invoke, require('/plugins/extendify/bootstrap.php'), Extendify\Agent\Admin->__construct, Extendify\Agent\Controllers\WorkflowHistoryController::init, Extendify\Agent\Controllers\WorkflowHistoryController::setupWorkflowsTable
+[05-Jan-2026 12:24:51 UTC] WordPress database error Error writing file '/tmp/.mysql/#sql-temptable-3818ad-1aeec09-11ef.MAD' (Errcode: 28 "No space left on device") for query SHOW FULL COLUMNS FROM `wp1l_options` made by require('wp-admin/menu.php'), require_once('wp-admin/includes/menu.php'), do_action('admin_menu'), WP_Hook->do_action, WP_Hook->apply_filters, Automattic\WooCommerce\GoogleListingsAndAds\Menu\NotificationManager->display_aggregated_notification_pill, apply_filters('google_for_woocommerce_admin_menu_notification_count'), WP_Hook->apply_filters, Automattic\WooCommerce\GoogleListingsAndAds\Menu\NotificationManager->raise_budget_recommendations_count, Automattic\WooCommerce\GoogleListingsAndAds\Ads\AdsRecommendationsService->get_recommendations, Automattic\WooCommerce\GoogleListingsAndAds\Options\Transients->set, set_transient, update_option
+[05-Jan-2026 12:24:52 UTC] WordPress database error Error writing file '/tmp/.mysql/#sql-temptable-3818ad-1aeec09-11f3.MAD' (Errcode: 28 "No space left on device") for query SHOW FULL COLUMNS FROM `wp1l_usermeta` made by require_once('wp-admin/admin-header.php'), do_action('admin_enqueue_scripts'), WP_Hook->do_action, WP_Hook->apply_filters, Extendify\Shared\Admin->loadGlobalScripts, Extendify\Shared\Admin->updateUserMeta, update_user_meta, update_metadata
+[05-Jan-2026 12:24:52 UTC] WordPress database error Error writing file '/tmp/.mysql/#sql-temptable-3818ad-1aeec09-11f4.MAD' (Errcode: 28 "No space left on device") for query SHOW FULL COLUMNS FROM `wp1l_options` made by require_once('wp-admin/admin-header.php'), do_action('admin_enqueue_scripts'), WP_Hook->do_action, WP_Hook->apply_filters, Extendify\Shared\Admin->loadGlobalScripts, Extendify\Shared\DataProvider\ResourceData->getData, wp_schedule_single_event, _set_cron_array, update_option
+[21-Jan-2026 09:30:30 UTC] PHP Warning:  Attempt to read property "taxonomy" on null in /home/eyesrzcn/public_html/wp-content/plugins/seo-by-rank-math/includes/admin/class-post-columns.php on line 174
+[21-Jan-2026 09:36:13 UTC] PHP Warning:  Attempt to read property "taxonomy" on null in /home/eyesrzcn/public_html/wp-content/plugins/seo-by-rank-math/includes/admin/class-post-columns.php on line 174
+[21-Jan-2026 10:49:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(341): Elementor\Modules\Ai\Module->get_product_images_ajax()
+#1 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters()
+#2 /home/eyesrzcn/public_html/wp-includes/plugin.php(522): WP_Hook->do_action()
+#3 /home/eyesrzcn/public_html/wp-admin/admin-ajax.php(192): do_action()
+#4 {main}
+  thrown in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[21-Jan-2026 11:13:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(341): Elementor\Modules\Ai\Module->get_product_images_ajax()
+#1 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters()
+#2 /home/eyesrzcn/public_html/wp-includes/plugin.php(522): WP_Hook->do_action()
+#3 /home/eyesrzcn/public_html/wp-admin/admin-ajax.php(192): do_action()
+#4 {main}
+  thrown in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[22-Jan-2026 06:20:03 UTC] PHP Fatal error:  Cannot redeclare eyeshot_change_thank_you_title() (previously declared in /home/eyesrzcn/public_html/wp-content/plugins/insert-headers-and-footers/includes/class-wpcode-snippet-execute.php(419) : eval()'d code:5) in /home/eyesrzcn/public_html/wp-content/plugins/insert-headers-and-footers/includes/class-wpcode-snippet-execute.php(419) : eval()'d code on line 5
+[02-Feb-2026 09:22:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(341): Elementor\Modules\Ai\Module->get_product_images_ajax()
+#1 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters()
+#2 /home/eyesrzcn/public_html/wp-includes/plugin.php(522): WP_Hook->do_action()
+#3 /home/eyesrzcn/public_html/wp-admin/admin-ajax.php(192): do_action()
+#4 {main}
+  thrown in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[02-Feb-2026 12:48:28 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(341): Elementor\Modules\Ai\Module->get_product_images_ajax()
+#1 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters()
+#2 /home/eyesrzcn/public_html/wp-includes/plugin.php(522): WP_Hook->do_action()
+#3 /home/eyesrzcn/public_html/wp-admin/admin-ajax.php(192): do_action()
+#4 {main}
+  thrown in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[03-Feb-2026 05:37:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(341): Elementor\Modules\Ai\Module->get_product_images_ajax()
+#1 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters()
+#2 /home/eyesrzcn/public_html/wp-includes/plugin.php(522): WP_Hook->do_action()
+#3 /home/eyesrzcn/public_html/wp-admin/admin-ajax.php(192): do_action()
+#4 {main}
+  thrown in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[03-Feb-2026 07:41:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(341): Elementor\Modules\Ai\Module->get_product_images_ajax()
+#1 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters()
+#2 /home/eyesrzcn/public_html/wp-includes/plugin.php(522): WP_Hook->do_action()
+#3 /home/eyesrzcn/public_html/wp-admin/admin-ajax.php(192): do_action()
+#4 {main}
+  thrown in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[03-Feb-2026 09:38:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(341): Elementor\Modules\Ai\Module->get_product_images_ajax()
+#1 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters()
+#2 /home/eyesrzcn/public_html/wp-includes/plugin.php(522): WP_Hook->do_action()
+#3 /home/eyesrzcn/public_html/wp-admin/admin-ajax.php(192): do_action()
+#4 {main}
+  thrown in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php on line 351
+[03-Feb-2026 10:40:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_gallery_image_ids() on bool in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php:351
+Stack trace:
+#0 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(341): Elementor\Modules\Ai\Module->get_product_images_ajax()
+#1 /home/eyesrzcn/public_html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters()
+#2 /home/eyesrzcn/public_html/wp-includes/plugin.php(522): WP_Hook->do_action()
+#3 /home/eyesrzcn/public_html/wp-admin/admin-ajax.php(192): do_action()
+#4 {main}
+  thrown in /home/eyesrzcn/public_html/wp-content/plugins/elementor/modules/ai/module.php on line 351

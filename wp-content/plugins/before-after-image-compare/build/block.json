@@ -1,0 +1,331 @@
+{
+  "apiVersion": 3,
+  "name": "icb/image-compare",
+  "title": "Image Compare",
+  "description": "Compare and filter between two images.",
+  "category": "widgets",
+  "keywords": [
+    "image comparison",
+    "image compare",
+    "image filter",
+    "visual comparison",
+    "before and after image",
+    "beaf",
+    "before after",
+    "before after image"
+  ],
+  "textdomain": "image-compare",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": ""
+    },
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "theme": {
+      "type": "string",
+      "default": "default"
+    },
+    "width": {
+      "type": "string",
+      "default": "80%"
+    },
+    "border": {
+      "type": "object",
+      "default": {}
+    },
+    "beforeImg": {
+      "type": "object",
+      "default": {
+        "id": null,
+        "url": "",
+        "alt": "",
+        "title": ""
+      }
+    },
+    "afterImg": {
+      "type": "object",
+      "default": {
+        "id": null,
+        "url": "",
+        "alt": "",
+        "title": ""
+      }
+    },
+    "orientation": {
+      "type": "string",
+      "default": "horizontal"
+    },
+    "isSwap": {
+      "type": "boolean",
+      "default": false
+    },
+    "isLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "label": {
+      "type": "object",
+      "default": {
+        "hAlign": "bottom",
+        "vAlign": "center",
+        "isShowHover": false
+      }
+    },
+    "beforeLabel": {
+      "type": "string",
+      "selector": ".beforeLabel",
+      "default": ""
+    },
+    "afterLabel": {
+      "type": "string",
+      "selector": ".afterLabel",
+      "default": ""
+    },
+    "labelTypo": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 15,
+          "tablet": 15,
+          "mobile": 15
+        }
+      }
+    },
+    "labelColors": {
+      "type": "object",
+      "default": {
+        "color": "#fff",
+        "bg": "#00000080"
+      }
+    },
+    "labelPadding": {
+      "type": "object",
+      "default": {
+        "vertical": "10px",
+        "horizontal": "15px"
+      }
+    },
+    "isCap": {
+      "type": "boolean",
+      "default": true
+    },
+    "cap": {
+      "type": "string",
+      "selector": ".caption",
+      "default": ""
+    },
+    "capAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "capTypo": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 14,
+          "tablet": 14,
+          "mobile": 14
+        }
+      }
+    },
+    "capColors": {
+      "type": "object",
+      "default": {
+        "color": "#333",
+        "bg": "#f4f4f4"
+      }
+    },
+    "capPadding": {
+      "type": "object",
+      "default": {
+        "vertical": "10px",
+        "horizontal": "15px"
+      }
+    },
+    "dragg": {
+      "type": "object",
+      "default": {
+        "handleType": "default",
+        "shapeType": "default"
+      }
+    },
+    "styles": {
+      "type": "object",
+      "default": {
+        "container": {
+          "height": {
+            "desktop": "",
+            "tablet": "",
+            "mobile": ""
+          }
+        },
+        "dragg": {
+          "line": {
+            "bg": {
+              "color": "#fff"
+            },
+            "size": 2
+          },
+          "icon": {
+            "color": ""
+          },
+          "handler": {
+            "color": ""
+          }
+        }
+      }
+    },
+    "options": {
+      "type": "object",
+      "default": {
+        "defaultOffset": 0.5,
+        "moveMouseOver": false,
+        "isMoveClick": false,
+        "autoSlide": {
+          "isAutoSlide": false,
+          "speed": 5,
+          "isHoverStop": true
+        }
+      }
+    },
+    "sliderOptions": {
+      "type": "object",
+      "default": {
+        "arrowType": "style1",
+        "height": {
+          "desktop": "400px",
+          "tablet": "400px",
+          "mobile": "400px"
+        },
+        "autoplay": true,
+        "dots": false,
+        "speed": 500,
+        "autoplaySpeed": 2500,
+        "pauseOnHover": true,
+        "infinite": true,
+        "arrows": true,
+        "slidesView": {
+          "desktop": 1,
+          "tablet": 1,
+          "mobile": 1
+        }
+      }
+    },
+    "sliderStyle": {
+      "type": "object",
+      "default": {
+        "pagination": {
+          "active": "#4527a4"
+        },
+        "navigation": {
+          "icon": {
+            "normal": {
+              "color": "#000",
+              "size": "22px"
+            },
+            "hover": {
+              "color": "",
+              "size": "22px"
+            }
+          },
+          "container": {
+            "height": "",
+            "width": "",
+            "normal": {
+              "bg": {
+                "color": "#fff"
+              },
+              "border": {},
+              "radius": {
+                "left": "30px",
+                "right": "30px",
+                "top": "30px",
+                "bottom": "30px"
+              }
+            },
+            "hover": {
+              "bg": {
+                "color": "#fff"
+              },
+              "border": {},
+              "radius": {}
+            }
+          }
+        }
+      }
+    },
+    "slider": {
+      "type": "array",
+      "default": [
+        {
+          "beforeImg": {
+            "img": {
+              "url": "https://templates.bplugins.com/wp-content/uploads/2025/03/beafImg.jpg"
+            },
+            "beforeLabel": "Before Label"
+          },
+          "afterImg": {
+            "img": {
+              "url": "https://templates.bplugins.com/wp-content/uploads/2025/03/beafImg2.jpg"
+            },
+            "afterLabel": "After Label"
+          },
+          "caption": "Before After Image Caption"
+        },
+        {
+          "beforeImg": {
+            "img": {
+              "url": "https://templates.bplugins.com/wp-content/uploads/2025/03/beafImg.jpg"
+            },
+            "beforeLabel": "Before Label"
+          },
+          "afterImg": {
+            "img": {
+              "url": "https://templates.bplugins.com/wp-content/uploads/2025/03/beafImg2.jpg"
+            },
+            "afterLabel": "After Label"
+          },
+          "caption": "Before After Image Caption"
+        },
+        {
+          "beforeImg": {
+            "img": {
+              "url": "https://templates.bplugins.com/wp-content/uploads/2025/03/beafImg.jpg"
+            },
+            "beforeLabel": "Before Label"
+          },
+          "afterImg": {
+            "img": {
+              "url": "https://templates.bplugins.com/wp-content/uploads/2025/03/beafImg2.jpg"
+            },
+            "afterLabel": "After Label"
+          },
+          "caption": "Before After Image Caption"
+        }
+      ]
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {
+      "preview": true
+    }
+  },
+  "editorScript": [
+    "file:./index.js",
+    "wp-api"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

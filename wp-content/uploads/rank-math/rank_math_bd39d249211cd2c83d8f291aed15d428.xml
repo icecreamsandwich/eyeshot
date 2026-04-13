@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//eyeshottourism.com/main-sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://eyeshottourism.com/product-category/uncategorized/</loc>
+		<lastmod>2026-02-04T06:51:34+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://eyeshottourism.com/product-category/tour-packages/</loc>
+		<lastmod>2026-02-04T11:14:30+00:00</lastmod>
+		<image:image>
+			<image:loc>https://eyeshottourism.com/wp-content/uploads/2025/11/2025-11-26-08-50-50-8b3dd4b0-764d-4031-8d1f-323a586231f3-e1768985250265.jpg</image:loc>
+		</image:image>
+	</url>
+	<url>
+		<loc>https://eyeshottourism.com/product-category/private-day-trips/</loc>
+		<lastmod>2026-02-04T06:51:34+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://eyeshottourism.com/product-category/doha-transit-qatar-stopover/</loc>
+		<lastmod>2026-02-04T06:51:34+00:00</lastmod>
+		<image:image>
+			<image:loc>https://eyeshottourism.com/wp-content/uploads/2025/11/Gemini_Generated_Image_kbnyvekbnyvekbny-e1770194774221.png</image:loc>
+		</image:image>
+	</url>
+</urlset>

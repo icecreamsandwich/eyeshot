@@ -1,0 +1,54 @@
+<?php
+
+class ImageCompare {
+
+	public function __construct(){
+		add_action( 'admin_menu', [$this, 'adminMenu'] );
+		add_action( 'admin_enqueue_scripts', [$this, 'adminEnqueueScripts'] );
+	}
+
+  // Add admin menu page
+		function adminMenu() {
+				add_submenu_page(
+					'tools.php', // Parent slug
+					'Image Compare', // Page title
+					'Image Compare', // Menu title
+					'manage_options', // Capability
+					'image-compare', // Menu slug
+					[$this, 'renderPage'] // Callback function
+				);
+		}
+
+		function adminEnqueueScripts($hook) {
+			if( strpos( $hook, 'image-compare')){
+					// wp_enqueue_style('view-css',BAICB_DIR_URL . 'build/view.css',[],BAICB_PLUGIN_VERSION);
+					// wp_enqueue_script('view-js',BAICB_DIR_URL . 'build/view.js',['react', 'react-dom'],BAICB_PLUGIN_VERSION);
+					wp_enqueue_style('icb-admin', BAICB_DIR_URL . 'build/admin.css', [], BAICB_PLUGIN_VERSION);
+					wp_enqueue_script('icb-admin', BAICB_DIR_URL . 'build/admin.js', [ 'react', 'react-dom','wp-util'], BAICB_PLUGIN_VERSION);
+				}
+			}	
+			
+			function renderTemplate($content){
+				$parseBlocks = parse_blocks($content);
+				return render_block($parseBlocks[0]);
+			}
+
+      // Render the admin page content
+			function renderPage() {
+				$dashboardData = [
+					"version" => BAICB_PLUGIN_VERSION,
+					"logo"	=> 'https://ps.w.org/before-after-image-compare/assets/icon-128x128.png?rev=3193735',
+					"isPremium" => icbImageCompareChecker(),
+					"nonce" => wp_create_nonce("wp_ajax"),
+					"hasPro"=> BAICB_HAS_PRO,
+					'licenseActiveNonce' => wp_create_nonce("baicbLicenseActivation")
+				];
+
+				?>
+				<div id="icbAdminDashboard"  data-dashboard="<?php echo esc_attr( wp_json_encode( $dashboardData )  ); ?>">
+				</div>
+				<?php
+			}
+}
+
+new ImageCompare();
