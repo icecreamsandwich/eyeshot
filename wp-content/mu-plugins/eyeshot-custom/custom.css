@@ -1,386 +1,949 @@
-/* =====================================================
-   Eyeshot Tourism – Custom Site Styles
-   =====================================================
-   Sections:
-     1.  Global reset / base
-     2.  Typography
-     3.  Buttons
-     4.  Navigation
-     5.  Page padding (global)
-     6.  Services page  (ID 26)
-     7.  Gallery page   (ID 28)
-     8.  Contact page   (ID 25)
-     9.  WooCommerce – product cards
-    10.  WooCommerce – cart / checkout
-    11.  Cover / hero blocks
-    12.  Forms
-    13.  Responsive
-   ===================================================== */
+/* ======================================================================
+   Eyeshot Tourism — 2026 Design System
+   Theme: Astra 4.x  |  Palette: Blue #1A56DB / White
+   ======================================================================
+
+   Table of contents
+   -----------------
+   00  Google Font import
+   01  CSS design tokens
+   02  Base reset & body
+   03  Typography
+   04  Header & navigation
+   05  Hero / cover blocks
+   06  Buttons & CTAs
+   07  Cards & section blocks
+   08  Page padding (global)
+   09  Home page
+   10  Services page  (ID 26)
+   11  Gallery page   (ID 28)
+   12  Contact page   (ID 25)
+   13  WooCommerce – shop / product cards
+   14  WooCommerce – cart & checkout
+   15  Forms & inputs
+   16  Footer
+   17  Utility: tags, badges, dividers
+   18  Animations & transitions
+   19  Responsive
+   ====================================================================== */
 
 
-/* --------------------------------------------------
-   1. Global reset / base
-   -------------------------------------------------- */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+/* -----------------------------------------------------------------------
+   00  Google Font import – Inter
+   ----------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+
+/* -----------------------------------------------------------------------
+   01  CSS Design Tokens
+   ----------------------------------------------------------------------- */
+:root {
+    /* Brand blues */
+    --clr-primary:        #1A56DB;
+    --clr-primary-dark:   #0E3FA5;
+    --clr-primary-light:  #60A5FA;
+    --clr-primary-pale:   #DBEAFE;
+    --clr-primary-tint:   #EFF6FF;
+
+    /* Neutrals */
+    --clr-dark:           #111827;
+    --clr-body:           #374151;
+    --clr-muted:          #6B7280;
+    --clr-border:         #E5E7EB;
+    --clr-surface:        #F9FAFB;
+    --clr-white:          #FFFFFF;
+
+    /* Typography */
+    --font-base:          'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --fw-normal:          400;
+    --fw-medium:          500;
+    --fw-semibold:        600;
+    --fw-bold:            700;
+    --fw-extrabold:       800;
+
+    /* Spacing scale */
+    --sp-xs:   0.5rem;
+    --sp-sm:   1rem;
+    --sp-md:   1.5rem;
+    --sp-lg:   2.5rem;
+    --sp-xl:   4rem;
+    --sp-2xl:  6rem;
+
+    /* Radius */
+    --r-sm:    6px;
+    --r-md:    10px;
+    --r-lg:    16px;
+    --r-pill:  9999px;
+
+    /* Shadows */
+    --shadow-sm:  0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+    --shadow-md:  0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.04);
+    --shadow-lg:  0 12px 32px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    --shadow-xl:  0 24px 64px rgba(0,0,0,.16);
+    --shadow-blue: 0 8px 24px rgba(26,86,219,.30);
+
+    /* Page max-width */
+    --site-width: 1200px;
+    --page-pad:   clamp(1.25rem, 5vw, 3rem);
 }
 
+
+/* -----------------------------------------------------------------------
+   02  Base reset & body
+   ----------------------------------------------------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
+    font-family: var(--font-base);
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--clr-body);
+    background-color: var(--clr-white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-/* --------------------------------------------------
-   2. Typography
-   -------------------------------------------------- */
-h1, h2, h3, h4, h5, h6,
-.wp-block-heading {
-    letter-spacing: -0.02em;
-    line-height: 1.25;
-}
-
-p {
-    line-height: 1.75;
-}
+img { max-width: 100%; height: auto; display: block; }
 
 a {
-    text-decoration-skip-ink: auto;
-    transition: color 0.2s ease, opacity 0.2s ease;
+    color: var(--clr-primary);
+    text-decoration: none;
+    transition: color .2s ease;
+}
+a:hover { color: var(--clr-primary-dark); }
+
+
+/* -----------------------------------------------------------------------
+   03  Typography
+   ----------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.wp-block-heading,
+.ast-blog-single-element,
+.entry-title {
+    font-family: var(--font-base);
+    font-weight: var(--fw-bold);
+    color: var(--clr-dark);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.625rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+h4 { font-size: 1.25rem; }
+
+p { margin-bottom: 1.25rem; color: var(--clr-body); }
+
+.has-large-font-size {
+    font-size: clamp(1.5rem, 3vw, 2.25rem) !important;
+    font-weight: var(--fw-bold);
+    letter-spacing: -0.025em;
+}
+
+/* Overline / label text style */
+.eyeshot-label {
+    font-size: .75rem;
+    font-weight: var(--fw-semibold);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--clr-primary);
 }
 
 
-/* --------------------------------------------------
-   3. Buttons
-   -------------------------------------------------- */
+/* -----------------------------------------------------------------------
+   04  Header & Navigation  (Astra selectors)
+   ----------------------------------------------------------------------- */
+
+/* Sticky header backdrop */
+.site-header,
+#masthead,
+.ast-header-break-point .site-header {
+    background: var(--clr-white) !important;
+    border-bottom: 1px solid var(--clr-border) !important;
+    box-shadow: var(--shadow-sm) !important;
+    transition: box-shadow .25s ease;
+}
+
+.ast-scroll-header-sticky.ast-sticky-active .site-header,
+.ast-scroll-header-sticky.ast-sticky-active #masthead {
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Logo area */
+.site-branding .site-title a,
+.ast-site-identity .site-title a {
+    font-weight: var(--fw-extrabold);
+    color: var(--clr-dark) !important;
+    letter-spacing: -0.04em;
+    font-size: 1.375rem;
+}
+
+/* Nav links */
+.main-navigation a,
+.ast-header-break-point .main-navigation a,
+#site-navigation a,
+.ast-primary-nav .menu-item > a,
+header .ast-builder-menu a {
+    font-size: .9375rem !important;
+    font-weight: var(--fw-medium) !important;
+    color: var(--clr-body) !important;
+    padding: 8px 14px !important;
+    border-radius: var(--r-sm);
+    transition: color .18s ease, background-color .18s ease;
+}
+
+.main-navigation a:hover,
+#site-navigation a:hover,
+.ast-primary-nav .menu-item > a:hover,
+header .ast-builder-menu a:hover,
+.main-navigation .current-menu-item > a,
+#site-navigation .current-menu-item > a {
+    color: var(--clr-primary) !important;
+    background-color: var(--clr-primary-tint) !important;
+}
+
+/* "Book Your Tour" nav item styled as a button */
+.main-navigation .menu-item a[href*="shop"],
+#site-navigation .menu-item a[href*="shop"] {
+    background: var(--clr-primary) !important;
+    color: var(--clr-white) !important;
+    border-radius: var(--r-sm) !important;
+    padding: 9px 18px !important;
+    font-weight: var(--fw-semibold) !important;
+    margin-left: 6px;
+}
+.main-navigation .menu-item a[href*="shop"]:hover,
+#site-navigation .menu-item a[href*="shop"]:hover {
+    background: var(--clr-primary-dark) !important;
+    color: var(--clr-white) !important;
+}
+
+/* Mobile hamburger */
+.ast-mobile-menu-trigger-fill svg,
+.menu-toggle svg { fill: var(--clr-dark); }
+
+
+/* -----------------------------------------------------------------------
+   05  Hero / Cover blocks
+   ----------------------------------------------------------------------- */
+.wp-block-cover,
+.wp-block-cover-image {
+    overflow: hidden;
+    position: relative;
+}
+
+/* Full-width hero: slight gradient vignette for legibility */
+.wp-block-cover.alignfull::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.10) 0%,
+        rgba(0,0,0,.45) 100%
+    );
+    pointer-events: none;
+}
+
+.wp-block-cover .wp-block-cover__inner-container {
+    position: relative;
+    z-index: 2;
+    padding: var(--sp-xl) var(--page-pad);
+}
+
+/* Non-full-width covers: card style */
+.wp-block-cover:not(.alignfull) {
+    border-radius: var(--r-lg);
+}
+
+/* Animated Ken-Burns effect on hero images */
+.wp-block-cover.alignfull .wp-block-cover__image-background {
+    animation: heroZoom 18s ease-in-out infinite alternate;
+    transform-origin: center center;
+}
+@keyframes heroZoom {
+    from { transform: scale(1); }
+    to   { transform: scale(1.06); }
+}
+
+
+/* -----------------------------------------------------------------------
+   06  Buttons & CTAs
+   ----------------------------------------------------------------------- */
 .wp-block-button__link,
-.wc-block-components-button,
+.ast-btn,
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input[type="submit"],
-.woocommerce #respond input#submit {
-    border-radius: 6px !important;
+.woocommerce #respond input#submit,
+.wc-block-components-button {
+    display: inline-flex !important;
+    align-items: center;
+    gap: .45rem;
+    background: var(--clr-primary) !important;
+    color: var(--clr-white) !important;
+    font-family: var(--font-base) !important;
+    font-weight: var(--fw-semibold) !important;
+    font-size: .9375rem !important;
+    letter-spacing: .01em;
+    border: none !important;
+    border-radius: var(--r-sm) !important;
     padding: 13px 28px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.025em !important;
-    transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+    cursor: pointer;
     text-decoration: none !important;
+    transition: background .18s ease, transform .18s ease, box-shadow .18s ease !important;
+    box-shadow: var(--shadow-blue) !important;
 }
 
 .wp-block-button__link:hover,
-.wc-block-components-button:hover,
 .woocommerce a.button:hover,
-.woocommerce button.button:hover {
+.woocommerce button.button:hover,
+.wc-block-components-button:hover {
+    background: var(--clr-primary-dark) !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18) !important;
+    box-shadow: 0 12px 28px rgba(26,86,219,.38) !important;
+    color: var(--clr-white) !important;
 }
 
 .wp-block-button__link:active,
 .woocommerce a.button:active {
     transform: translateY(0);
+    box-shadow: var(--shadow-blue) !important;
+}
+
+/* Outline variant */
+.is-style-outline .wp-block-button__link {
+    background: transparent !important;
+    color: var(--clr-primary) !important;
+    border: 2px solid var(--clr-primary) !important;
     box-shadow: none !important;
 }
-
-
-/* --------------------------------------------------
-   4. Navigation
-   -------------------------------------------------- */
-.wp-block-navigation__container .wp-block-navigation-item__content {
-    font-weight: 500;
-    padding: 8px 14px;
-    border-radius: 5px;
-    transition: background-color 0.18s ease;
-}
-
-.wp-block-navigation__container .wp-block-navigation-item__content:hover {
-    background-color: rgba(0, 0, 0, 0.06);
+.is-style-outline .wp-block-button__link:hover {
+    background: var(--clr-primary) !important;
+    color: var(--clr-white) !important;
 }
 
 
-/* --------------------------------------------------
-   5. Page padding – global
-   -------------------------------------------------- */
+/* -----------------------------------------------------------------------
+   07  Cards & section blocks
+   ----------------------------------------------------------------------- */
 
-/*
- * With useRootPaddingAwareAlignments enabled, `alignfull` blocks escape the
- * root padding. Each section sets its own inline padding via style= attributes.
- * However, `alignwide` children inside a constrained group use auto-margins
- * calculated against the group's box width (before padding), which can push
- * content to the viewport edges on certain viewport sizes.
- *
- * We enforce a safe minimum content width so nothing ever touches the edges.
- */
-.wp-block-group.alignfull.is-layout-constrained > * {
-    max-width: calc(100% - 2 * clamp(1.5rem, 6vw, 2rem));
+/* Generic content group card */
+.wp-block-group:not(.alignfull):not(.alignwide):not([class*="is-layout-flex"]):not([class*="is-layout-grid"]) {
+    border-radius: var(--r-md);
+}
+
+/* Feature / service item cards */
+.wp-block-group.has-background:not(.alignfull) {
+    border-radius: var(--r-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow .22s ease, transform .22s ease;
+}
+.wp-block-group.has-background:not(.alignfull):hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+/* Tertiary (light grey) sections */
+.has-tertiary-background-color,
+.wp-block-group.has-tertiary-background-color {
+    background-color: var(--clr-primary-tint) !important;
+}
+
+/* Section headings with decorative underline */
+.wp-block-group .wp-block-heading:first-child::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--clr-primary), var(--clr-primary-light));
+    border-radius: 2px;
+    margin-top: 12px;
+}
+
+/* Column layout spacing */
+.wp-block-columns {
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* Separator */
+.wp-block-separator {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--clr-border) 20%,
+        var(--clr-border) 80%,
+        transparent 100%
+    );
+    margin: var(--sp-lg) auto;
+}
+
+
+/* -----------------------------------------------------------------------
+   08  Page padding (global)
+   ----------------------------------------------------------------------- */
+
+/* Astra classic layout: content sits inside .ast-container or .container */
+.ast-container,
+.ast-page-builder-template .ast-content-layout-wrap {
+    max-width: var(--site-width);
+    padding-left: var(--page-pad);
+    padding-right: var(--page-pad);
+}
+
+/* Block editor full-width sections: enforce gutters so nothing
+   touches the viewport edge */
+.wp-block-group.alignfull.is-layout-constrained > *:not(.alignfull) {
+    max-width: calc(100% - 2 * var(--page-pad));
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Don't collapse sections that deliberately opt out of the constraint */
-.wp-block-group.alignfull.is-layout-constrained > .alignfull {
-    max-width: 100%;
-    margin-left: calc(-1 * clamp(1.5rem, 6vw, 2rem));
-    margin-right: calc(-1 * clamp(1.5rem, 6vw, 2rem));
-}
-
-/* Wide children: cap at wideSize minus gutters */
 .wp-block-group.alignfull.is-layout-constrained > .alignwide {
-    max-width: min(80rem, calc(100% - 2 * clamp(1.5rem, 6vw, 2rem)));
+    max-width: min(80rem, calc(100% - 2 * var(--page-pad)));
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Astra page content area */
+.ast-page-builder-template #content,
+.ast-page-builder-template .entry-content {
+    padding: 0;
+}
 
-/* --------------------------------------------------
-   6. Services page (page-id-26)
-   -------------------------------------------------- */
+/* Entry content spacing */
+.entry-content {
+    padding-top: var(--sp-lg);
+    padding-bottom: var(--sp-xl);
+}
 
-/* Ensure the wide columns never touch viewport edges */
+/* Give every page a comfortable top breath */
+.ast-page-builder-template .site-content-wrap {
+    padding-top: 0;
+}
+
+
+/* -----------------------------------------------------------------------
+   09  Home page
+   ----------------------------------------------------------------------- */
+.home .wp-block-cover.alignfull {
+    min-height: 92vh;
+}
+
+.home .wp-block-cover.alignfull h1,
+.home .wp-block-cover.alignfull h2 {
+    color: #FFFFFF;
+    text-shadow: 0 2px 16px rgba(0,0,0,.35);
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: var(--fw-extrabold);
+    letter-spacing: -0.035em;
+}
+
+/* Stats / highlights row */
+.home .wp-block-columns.alignwide {
+    max-width: min(80rem, calc(100% - 2 * var(--page-pad)));
+    margin-inline: auto;
+}
+
+/* Why-choose-us / feature section */
+.home .has-tertiary-background-color {
+    background: var(--clr-primary-tint) !important;
+}
+
+
+/* -----------------------------------------------------------------------
+   10  Services page (ID 26)
+   ----------------------------------------------------------------------- */
 .page-id-26 .wp-block-columns.alignwide {
-    max-width: min(80rem, calc(100% - 2 * clamp(1.5rem, 6vw, 2rem)));
-    margin-left: auto;
-    margin-right: auto;
+    max-width: min(80rem, calc(100% - 2 * var(--page-pad)));
+    margin-inline: auto;
 }
 
-/* Service feature items – subtle card lift */
-.page-id-26 .wp-block-group:not(.alignfull):not(.alignwide) {
-    border-radius: 10px;
+.page-id-26 #service-area {
+    padding-left: var(--page-pad) !important;
+    padding-right: var(--page-pad) !important;
+    background: var(--clr-primary-tint) !important;
+    border-top: 1px solid var(--clr-primary-pale);
 }
 
-/* Banner / grey divider row */
-#service-area {
-    padding-left: clamp(1.5rem, 6vw, 2rem) !important;
-    padding-right: clamp(1.5rem, 6vw, 2rem) !important;
+/* Service feature rows */
+.page-id-26 .wp-block-group.has-background {
+    border-left: 4px solid var(--clr-primary);
 }
 
 
-/* --------------------------------------------------
-   7. Gallery page (page-id-28)
-   -------------------------------------------------- */
+/* -----------------------------------------------------------------------
+   11  Gallery page (ID 28)
+   ----------------------------------------------------------------------- */
 
-/* Constrain the wide gallery within its padded section */
+/* Constrain the wide gallery within its padded container */
 .page-id-28 .wp-block-gallery.alignwide {
-    max-width: min(80rem, calc(100% - 2 * clamp(1.5rem, 6vw, 2rem)));
+    max-width: min(80rem, calc(100% - 2 * var(--page-pad)));
     margin-left: auto !important;
     margin-right: auto !important;
     width: 100%;
 }
 
-/* Image tiles – rounded corners + smooth hover */
-.page-id-28 .wp-block-gallery figure.wp-block-image,
-.page-id-28 .wp-block-gallery .wp-block-image {
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.page-id-28 .wp-block-gallery figure.wp-block-image img {
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-    border-radius: 10px;
-}
-
-.page-id-28 .wp-block-gallery figure.wp-block-image:hover img {
-    transform: scale(1.04);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Consistent gap between tiles */
+/* Masonry-feel: consistent gap */
 .page-id-28 .wp-block-gallery.has-nested-images {
     gap: 14px !important;
 }
 
-/* Portfolio cover blocks below the gallery */
-.page-id-28 .wp-block-cover {
-    border-radius: 10px;
+/* Tile styling */
+.page-id-28 .wp-block-gallery figure.wp-block-image {
+    border-radius: var(--r-md);
     overflow: hidden;
-    transition: box-shadow 0.3s ease;
+    box-shadow: var(--shadow-sm);
 }
 
-.page-id-28 .wp-block-cover:hover {
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+.page-id-28 .wp-block-gallery figure.wp-block-image img {
+    transition: transform .4s ease;
+    border-radius: var(--r-md);
 }
 
-/* Constrain portfolio columns too */
+.page-id-28 .wp-block-gallery figure.wp-block-image:hover img {
+    transform: scale(1.05);
+}
+
+.page-id-28 .wp-block-gallery figure.wp-block-image:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Portfolio cover cards */
+.page-id-28 .wp-block-cover:not(.alignfull) {
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    transition: box-shadow .3s ease, transform .3s ease;
+    box-shadow: var(--shadow-sm);
+}
+.page-id-28 .wp-block-cover:not(.alignfull):hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
+}
+
+/* Portfolio columns constrained */
 .page-id-28 .wp-block-columns.alignwide {
-    max-width: min(80rem, calc(100% - 2 * clamp(1.5rem, 6vw, 2rem)));
-    margin-left: auto;
-    margin-right: auto;
+    max-width: min(80rem, calc(100% - 2 * var(--page-pad)));
+    margin-inline: auto;
 }
 
 
-/* --------------------------------------------------
-   8. Contact page (page-id-25)
-   -------------------------------------------------- */
+/* -----------------------------------------------------------------------
+   12  Contact page (ID 25)
+   ----------------------------------------------------------------------- */
 
-/* Rounded map embed */
-.page-id-25 iframe {
-    border-radius: 12px;
+/* Map tile */
+.page-id-25 .wp-block-html iframe {
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-md);
     display: block;
+    border: 0;
+    transition: box-shadow .3s ease;
+}
+.page-id-25 .wp-block-html iframe:hover {
+    box-shadow: var(--shadow-lg);
 }
 
-/* Contact info card */
-.page-id-25 .wp-block-column.is-vertically-aligned-stretch {
-    border-radius: 10px;
-    overflow: hidden;
+/* Contact info column */
+.page-id-25 .has-background.wp-block-column,
+.page-id-25 .wp-block-group.has-tertiary-background-color {
+    border-radius: var(--r-md) !important;
+    border: 1px solid var(--clr-primary-pale);
+    background: var(--clr-primary-tint) !important;
+    padding: clamp(1.5rem, 4vw, 2.5rem) !important;
+}
+
+/* Icon + label rows */
+.page-id-25 .wp-block-columns.is-not-stacked-on-mobile p {
+    margin-bottom: .25rem;
 }
 
 
-/* --------------------------------------------------
-   9. WooCommerce – product cards
-   -------------------------------------------------- */
+/* -----------------------------------------------------------------------
+   13  WooCommerce – shop & product cards
+   ----------------------------------------------------------------------- */
+
+/* Grid */
+.woocommerce ul.products,
+.wc-block-grid__products {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 28px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* Card */
 ul.products li.product,
 .wc-block-grid__product {
-    border-radius: 12px;
+    background: var(--clr-white);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--r-lg) !important;
     overflow: hidden;
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    box-shadow: var(--shadow-sm);
+    transition: transform .22s ease, box-shadow .22s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 ul.products li.product:hover,
 .wc-block-grid__product:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg) !important;
 }
 
-ul.products li.product img,
+/* Product image */
+ul.products li.product a img,
 .wc-block-grid__product-image img {
-    transition: transform 0.35s ease;
-    display: block;
     width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform .4s ease;
 }
-
-ul.products li.product:hover img,
+ul.products li.product:hover a img,
 .wc-block-grid__product:hover .wc-block-grid__product-image img {
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
-.woocommerce .price,
+/* Product info area */
+ul.products li.product .woocommerce-loop-product__title,
+.wc-block-grid__product-title {
+    font-weight: var(--fw-semibold) !important;
+    font-size: 1rem !important;
+    color: var(--clr-dark) !important;
+    padding: 1rem 1rem 0 !important;
+    margin-bottom: .35rem !important;
+}
+
+ul.products li.product .price,
 .wc-block-grid__product-price {
-    font-weight: 700;
-    letter-spacing: -0.01em;
+    color: var(--clr-primary) !important;
+    font-weight: var(--fw-bold) !important;
+    font-size: 1.125rem !important;
+    padding: 0 1rem !important;
 }
 
-.woocommerce span.onsale {
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
+/* Sale badge */
+ul.products li.product .onsale,
+.wc-block-grid__product .wc-block-grid__product-onsale {
+    background: var(--clr-primary) !important;
+    color: var(--clr-white) !important;
+    border-radius: var(--r-sm) !important;
+    font-size: .7rem;
+    font-weight: var(--fw-bold);
+    letter-spacing: .08em;
     text-transform: uppercase;
+    padding: 4px 10px !important;
+    top: 12px !important;
+    left: 12px !important;
+}
+
+/* Add to cart button on card */
+ul.products li.product .ast-woo-product-add-to-cart,
+ul.products li.product form.cart {
+    margin: auto 1rem 1rem;
 }
 
 
-/* --------------------------------------------------
-  10. WooCommerce – cart & checkout
-   -------------------------------------------------- */
+/* -----------------------------------------------------------------------
+   14  WooCommerce – cart & checkout
+   ----------------------------------------------------------------------- */
 .woocommerce-cart .woocommerce,
 .woocommerce-checkout .woocommerce {
-    padding-left: clamp(1.5rem, 6vw, 2rem);
-    padding-right: clamp(1.5rem, 6vw, 2rem);
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding: var(--sp-lg) var(--page-pad);
 }
 
+/* Cart table */
 .woocommerce table.shop_table {
-    border-radius: 8px;
+    border-radius: var(--r-md);
     overflow: hidden;
+    border: 1px solid var(--clr-border) !important;
     border-collapse: separate;
     border-spacing: 0;
+    box-shadow: var(--shadow-sm);
 }
 
+.woocommerce table.shop_table th {
+    background: var(--clr-primary-tint);
+    color: var(--clr-dark);
+    font-weight: var(--fw-semibold);
+    border-bottom: 1px solid var(--clr-primary-pale);
+    padding: 14px 20px;
+}
+
+.woocommerce table.shop_table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--clr-border);
+    vertical-align: middle;
+}
+
+/* Order summary / totals box */
+.woocommerce .cart_totals,
+.woocommerce .order-total {
+    background: var(--clr-primary-tint);
+    border: 1px solid var(--clr-primary-pale);
+    border-radius: var(--r-md);
+    padding: 1.5rem;
+}
+
+/* Payment box */
 .woocommerce-checkout #payment {
-    border-radius: 10px;
+    background: var(--clr-white) !important;
+    border: 1px solid var(--clr-border) !important;
+    border-radius: var(--r-md);
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
 }
 
 .woocommerce-checkout #payment ul.payment_methods {
-    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid var(--clr-border);
+    background: var(--clr-primary-tint);
 }
 
-/* Payment method icons */
 .woocommerce-checkout #payment ul.payment_methods li {
     padding: 14px 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    border-bottom: 1px solid var(--clr-border);
+    font-weight: var(--fw-medium);
 }
 
 .woocommerce-checkout #payment ul.payment_methods li:last-child {
     border-bottom: none;
 }
 
-
-/* --------------------------------------------------
-  11. Cover / hero blocks
-   -------------------------------------------------- */
-.wp-block-cover {
-    overflow: hidden;
-}
-
-.wp-block-cover.alignfull {
-    border-radius: 0;
-}
-
-.wp-block-cover:not(.alignfull):not(.alignwide) {
-    border-radius: 10px;
+/* Checkout section headings */
+.woocommerce .woocommerce-checkout h3 {
+    font-size: 1.125rem;
+    font-weight: var(--fw-semibold);
+    color: var(--clr-dark);
+    border-bottom: 2px solid var(--clr-primary-pale);
+    padding-bottom: .75rem;
+    margin-bottom: 1.25rem;
 }
 
 
-/* --------------------------------------------------
-  12. Forms
-   -------------------------------------------------- */
+/* -----------------------------------------------------------------------
+   15  Forms & inputs
+   ----------------------------------------------------------------------- */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="number"],
 input[type="password"],
 input[type="search"],
+input[type="url"],
 textarea,
 select {
-    border-radius: 6px !important;
-    transition: border-color 0.18s ease, box-shadow 0.18s ease !important;
+    font-family: var(--font-base) !important;
+    font-size: .9375rem !important;
+    color: var(--clr-dark) !important;
+    background: var(--clr-white) !important;
+    border: 1.5px solid var(--clr-border) !important;
+    border-radius: var(--r-sm) !important;
+    padding: 11px 14px !important;
+    width: 100%;
+    transition: border-color .18s ease, box-shadow .18s ease !important;
+    appearance: none;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-input[type="number"]:focus,
-input[type="password"]:focus,
+input:focus,
 textarea:focus,
 select:focus {
     outline: none !important;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1) !important;
+    border-color: var(--clr-primary) !important;
+    box-shadow: 0 0 0 3px rgba(26,86,219,.15) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--clr-muted);
+}
+
+/* Form labels */
+label,
+.woocommerce form .form-row label,
+.wpcf7 label {
+    font-size: .875rem;
+    font-weight: var(--fw-medium);
+    color: var(--clr-dark);
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* WPForms modern look */
+.wpforms-form .wpforms-field {
+    margin-bottom: 1.25rem;
+}
+
+.wpforms-form input[type="submit"],
+.wpforms-form button[type="submit"] {
+    background: var(--clr-primary) !important;
+    color: var(--clr-white) !important;
+    border: none !important;
+    border-radius: var(--r-sm) !important;
+    padding: 13px 32px !important;
+    font-size: .9375rem !important;
+    font-weight: var(--fw-semibold) !important;
+    cursor: pointer;
+    transition: background .18s ease, transform .18s ease !important;
+    box-shadow: var(--shadow-blue) !important;
+}
+
+.wpforms-form input[type="submit"]:hover,
+.wpforms-form button[type="submit"]:hover {
+    background: var(--clr-primary-dark) !important;
+    transform: translateY(-2px);
+}
+
+/* Checkbox / radio */
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    accent-color: var(--clr-primary);
 }
 
 
-/* --------------------------------------------------
-  13. Responsive
-   -------------------------------------------------- */
+/* -----------------------------------------------------------------------
+   16  Footer
+   ----------------------------------------------------------------------- */
+.site-footer,
+#colophon,
+.ast-small-footer {
+    background: var(--clr-primary-dark) !important;
+    color: var(--clr-primary-pale) !important;
+    padding: var(--sp-lg) var(--page-pad) !important;
+    font-size: .875rem;
+}
+
+.site-footer a,
+#colophon a,
+.ast-small-footer a {
+    color: #93C5FD !important;
+    transition: color .18s ease;
+}
+
+.site-footer a:hover,
+#colophon a:hover,
+.ast-small-footer a:hover {
+    color: var(--clr-white) !important;
+}
+
+.ast-small-footer .ast-footer-copyright {
+    color: var(--clr-primary-pale) !important;
+}
+
+
+/* -----------------------------------------------------------------------
+   17  Utility: tags, badges, notices
+   ----------------------------------------------------------------------- */
+.woocommerce-message,
+.woocommerce-info {
+    border-top-color: var(--clr-primary) !important;
+    border-radius: var(--r-sm);
+    background: var(--clr-primary-tint) !important;
+}
+
+.woocommerce-error {
+    border-top-color: #DC2626 !important;
+    border-radius: var(--r-sm);
+}
+
+/* Breadcrumbs */
+.woocommerce .woocommerce-breadcrumb,
+.ast-breadcrumbs-wrapper {
+    font-size: .8125rem;
+    color: var(--clr-muted);
+    padding: .75rem 0;
+}
+.woocommerce .woocommerce-breadcrumb a,
+.ast-breadcrumbs-wrapper a {
+    color: var(--clr-primary);
+}
+
+
+/* -----------------------------------------------------------------------
+   18  Animations & transitions  (scroll-reveal helpers)
+   ----------------------------------------------------------------------- */
+
+/* Fade-in on intersection – applied via CSS-only fallback */
+@media (prefers-reduced-motion: no-preference) {
+    .wp-block-group.alignfull {
+        animation: sectionFadeUp .6s ease both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 25%;
+    }
+}
+
+@keyframes sectionFadeUp {
+    from { opacity: .4; transform: translateY(20px); }
+    to   { opacity: 1;  transform: translateY(0); }
+}
+
+
+/* -----------------------------------------------------------------------
+   19  Responsive
+   ----------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .wp-block-group.alignfull.is-layout-constrained > *:not(.alignfull) {
+        max-width: calc(100% - 2 * clamp(1.25rem, 4vw, 2rem));
+    }
+}
+
 @media (max-width: 768px) {
-    /* Ensure minimum padding is always present on mobile */
-    .wp-block-group.alignfull.is-layout-constrained > *,
+    :root {
+        --page-pad: 1.25rem;
+    }
+
+    .wp-block-group.alignfull.is-layout-constrained > *:not(.alignfull),
     .wp-block-group.alignfull.is-layout-constrained > .alignwide {
-        max-width: calc(100% - 3rem);
+        max-width: calc(100% - 2 * var(--page-pad));
     }
 
     .page-id-28 .wp-block-gallery.alignwide {
-        max-width: calc(100% - 3rem);
+        max-width: calc(100% - 2 * var(--page-pad));
     }
 
     .page-id-28 .wp-block-gallery.has-nested-images {
         gap: 8px !important;
     }
 
-    .wp-block-button__link,
-    .woocommerce a.button,
-    .woocommerce button.button {
-        padding: 12px 22px !important;
+    .woocommerce ul.products {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+        gap: 16px;
+    }
+
+    .wp-block-cover .wp-block-cover__inner-container {
+        padding: var(--sp-lg) var(--page-pad);
+    }
+
+    .home .wp-block-cover.alignfull {
+        min-height: 75vh;
     }
 }
 
 @media (max-width: 480px) {
-    .wp-block-group.alignfull.is-layout-constrained > *,
-    .wp-block-group.alignfull.is-layout-constrained > .alignwide {
-        max-width: calc(100% - 2rem);
+    :root {
+        --page-pad: 1rem;
+    }
+
+    .woocommerce ul.products {
+        grid-template-columns: 1fr !important;
+    }
+
+    .wp-block-button__link,
+    .woocommerce a.button,
+    .woocommerce button.button {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px !important;
     }
 }
