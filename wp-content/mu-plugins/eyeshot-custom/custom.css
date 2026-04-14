@@ -191,36 +191,31 @@ header .ast-builder-menu a {
     font-size: .9375rem !important;
     font-weight: var(--fw-medium) !important;
     color: var(--clr-body) !important;
-    padding: 8px 14px !important;
+    padding: 6px 10px !important;
     border-radius: var(--r-sm);
     transition: color .18s ease, background-color .18s ease;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .main-navigation a:hover,
 #site-navigation a:hover,
 .ast-primary-nav .menu-item > a:hover,
-header .ast-builder-menu a:hover,
+header .ast-builder-menu a:hover {
+    color: var(--clr-primary) !important;
+    background-color: var(--clr-primary-tint) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 .main-navigation .current-menu-item > a,
 #site-navigation .current-menu-item > a {
     color: var(--clr-primary) !important;
     background-color: var(--clr-primary-tint) !important;
+    font-weight: var(--fw-semibold) !important;
 }
 
-/* "Book Your Tour" nav item styled as a button */
-.main-navigation .menu-item a[href*="shop"],
-#site-navigation .menu-item a[href*="shop"] {
-    background: var(--clr-primary) !important;
-    color: var(--clr-white) !important;
-    border-radius: var(--r-sm) !important;
-    padding: 9px 18px !important;
-    font-weight: var(--fw-semibold) !important;
-    margin-left: 6px;
-}
-.main-navigation .menu-item a[href*="shop"]:hover,
-#site-navigation .menu-item a[href*="shop"]:hover {
-    background: var(--clr-primary-dark) !important;
-    color: var(--clr-white) !important;
-}
+/* "Book Your Tour" — no permanent highlight; only active/hover states apply */
 
 /* Mobile hamburger */
 .ast-mobile-menu-trigger-fill svg,
@@ -274,6 +269,15 @@ header .ast-builder-menu a:hover,
 /* -----------------------------------------------------------------------
    06  Buttons & CTAs
    ----------------------------------------------------------------------- */
+
+/* Slider (SuperBlockSlider) CTA buttons keep their own inline border-radius
+   (100px pill shape) — we must NOT override with !important for those. */
+.superblockslider .wp-block-button__link,
+.sbs-slider .wp-block-button__link,
+[class*="superblock"] .wp-block-button__link {
+    border-radius: unset !important; /* allow inline style to win */
+}
+
 .wp-block-button__link,
 .ast-btn,
 .woocommerce a.button,
@@ -297,6 +301,13 @@ header .ast-builder-menu a:hover,
     text-decoration: none !important;
     transition: background .18s ease, transform .18s ease, box-shadow .18s ease !important;
     box-shadow: var(--shadow-blue) !important;
+}
+
+/* Re-apply pill radius for slider buttons after the general rule */
+.superblockslider .wp-block-button__link,
+.sbs-slider .wp-block-button__link,
+[class*="superblock"] .wp-block-button__link {
+    border-radius: 100px !important;
 }
 
 .wp-block-button__link:hover,
@@ -837,8 +848,26 @@ input[type="radio"] {
     color: var(--clr-white) !important;
 }
 
-.ast-small-footer .ast-footer-copyright {
+/* Footer copyright — multiple selectors to ensure visibility regardless of Astra version */
+.ast-small-footer .ast-footer-copyright,
+.ast-small-footer .ast-footer-copyright p,
+.ast-small-footer span,
+.ast-small-footer p,
+#colophon .ast-footer-copyright,
+#colophon .ast-footer-copyright p,
+.ast-footer-copyright,
+.ast-footer-copyright p,
+footer .copyright,
+.site-footer p {
     color: var(--clr-primary-pale) !important;
+}
+
+/* Hide site title/tagline if Astra option doesn't take effect */
+.site-title,
+.ast-site-identity .site-title,
+.site-description,
+.ast-site-identity .site-description {
+    display: none !important;
 }
 
 
