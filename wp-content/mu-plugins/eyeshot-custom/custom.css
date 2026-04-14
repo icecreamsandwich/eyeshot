@@ -173,13 +173,33 @@ p { margin-bottom: 1.25rem; color: var(--clr-body); }
     box-shadow: var(--shadow-md) !important;
 }
 
-/* Logo area */
+/* Logo image — cap size regardless of uploaded image dimensions */
+.ast-site-identity .custom-logo,
+.site-branding .custom-logo,
+.custom-logo-link img,
+.ast-logo-img,
+header .site-logo img,
+.ast-site-identity img {
+    width: 140px !important;
+    max-width: 140px !important;
+    height: auto !important;
+}
+
+/* Hide site title text and tagline (Astra option fallback) */
+.site-title,
+.ast-site-identity .site-title,
+.site-description,
+.ast-site-identity .site-description {
+    display: none !important;
+}
+
+/* Logo area text fallback (if text logo is used) */
 .site-branding .site-title a,
 .ast-site-identity .site-title a {
     font-weight: var(--fw-extrabold);
     color: var(--clr-dark) !important;
     letter-spacing: -0.04em;
-    font-size: 1.375rem;
+    font-size: 1.25rem;
 }
 
 /* Nav links */
