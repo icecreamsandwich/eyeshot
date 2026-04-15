@@ -47,3 +47,6 @@ yarn-error.log
 # Environment files
 .env
 .env.local
+
+# WordPress export files (deploy separately via FTP, not tracked in git)
+homepage-export.xml

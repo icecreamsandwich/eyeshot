@@ -138,94 +138,37 @@ if ( $menu_id ) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// 4.  Homepage content — apply all content fixes to the front-page post
+// 4.  Homepage content — import from homepage-export.xml
+//     The XML was exported from local DDEV after all Gutenberg/block edits.
+//     Images in the content already reference eyeshottourism.com, so no
+//     URL replacement is needed for the content itself.
 // ─────────────────────────────────────────────────────────────────────────────
-$front_page_id = (int) get_option( 'page_on_front' );
-if ( ! $front_page_id ) {
-    // Fallback: find page with slug 'home' or title 'Home'
-    $home = get_page_by_path( 'home' ) ?: get_page_by_title( 'Home' );
-    if ( $home ) $front_page_id = (int) $home->ID;
-}
+$xml_file = __DIR__ . '/homepage-export.xml';
 
-if ( $front_page_id ) {
-    $post    = get_post( $front_page_id );
-    $content = $post->post_content;
-    $changed = false;
+if ( file_exists( $xml_file ) ) {
+    echo "\n--- Importing homepage content from homepage-export.xml ---\n";
 
-    // 4a. Strip <mark style="background-color:..."> wrappers (keep inner text)
-    $before  = $content;
-    $content = preg_replace(
-        '/<mark\s+style="[^"]*"[^>]*>(.*?)<\/mark>/is',
-        '$1',
-        $content
-    );
-    if ( $content !== $before ) {
-        echo "✔ Removed <mark> background-color wrappers from slider headings\n";
-        $changed = true;
-    }
+    // Use WordPress importer via WP-CLI as a shell call (most reliable on shared hosting)
+    $cmd    = "wp import " . escapeshellarg( $xml_file ) . " --authors=skip 2>&1";
+    $output = shell_exec( $cmd );
+    echo $output ?: "✔ Import command sent\n";
 
-    // 4b. Remove the "Contact Details" group block (name:Contact, bg:#dddddd)
-    $search_from = 0;
-    while ( ( $candidate = strpos( $content, '<!-- wp:group', $search_from ) ) !== false ) {
-        $end     = strpos( $content, '-->', $candidate );
-        if ( $end === false ) break;
-        $comment = substr( $content, $candidate, $end - $candidate + 3 );
-
-        if ( strpos( $comment, '"name":"Contact"' ) !== false
-             && strpos( $comment, '#dddddd' ) !== false ) {
-
-            // Nesting-aware removal
-            $cursor    = $candidate + strlen( $comment );
-            $depth     = 1;
-            $block_end = false;
-
-            while ( $depth > 0 ) {
-                $nxt_open  = strpos( $content, '<!-- wp:group',  $cursor );
-                $nxt_close = strpos( $content, '<!-- /wp:group', $cursor );
-                if ( $nxt_close === false ) break;
-                if ( $nxt_open !== false && $nxt_open < $nxt_close ) {
-                    $depth++;
-                    $cursor = $nxt_open + 13;
-                } else {
-                    $depth--;
-                    if ( $depth === 0 ) {
-                        $ce = strpos( $content, '-->', $nxt_close );
-                        if ( $ce !== false ) $block_end = $ce + 3;
-                    }
-                    $cursor = $nxt_close + 14;
-                }
-            }
-
-            if ( $block_end ) {
-                $len     = $block_end - $candidate;
-                $content = substr( $content, 0, $candidate ) . substr( $content, $block_end );
-                echo "✔ Removed Contact Details group block ({$len} chars)\n";
-                $changed = true;
-                // Don't advance — re-check from same position for a second block
-                continue;
-            }
+    // Verify: check the front page has content now
+    $front_id = (int) get_option( 'page_on_front' );
+    if ( $front_id ) {
+        $p = get_post( $front_id );
+        if ( ! empty( $p->post_content ) ) {
+            echo "✔ Homepage content imported (post ID {$front_id}, " . strlen( $p->post_content ) . " chars)\n";
+        } else {
+            echo "⚠ Homepage post exists but content is empty — check import manually\n";
         }
-        $search_from = $candidate + 13;
     }
-
-    if ( $changed ) {
-        wp_update_post( [ 'ID' => $front_page_id, 'post_content' => $content ] );
-        echo "✔ Homepage (post ID {$front_page_id}) saved\n";
-    } else {
-        echo "✔ Homepage content already clean — no changes needed\n";
-    }
+    echo "⚠ NOTE: Delete homepage-export.xml from the server after this script runs.\n";
 } else {
-    echo "⚠ Front page not found — skipping content fixes\n";
+    echo "⚠ homepage-export.xml not found — skipping homepage import.\n";
+    echo "  Upload homepage-export.xml to the same folder as this script, or\n";
+    echo "  import it manually via WP Admin → Tools → Import → WordPress.\n";
 }
-
-// ─────────────────────────────────────────────────────────────────────────────
-// 5.  Fix any remaining local URLs in post content / options
-// ─────────────────────────────────────────────────────────────────────────────
-echo "\n--- Running URL search-replace ({$local_domain} → {$production_domain}) ---\n";
-// WP-CLI search-replace is the safest way; call it as a system command
-$cmd    = "wp search-replace '{$local_domain}' '{$production_domain}' --skip-columns=guid 2>&1";
-$output = shell_exec( $cmd );
-echo $output ?: "✔ search-replace complete\n";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 6.  Payment gateways — activate MyFatoorah, disable PayPal
