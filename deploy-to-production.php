@@ -228,7 +228,42 @@ $output = shell_exec( $cmd );
 echo $output ?: "✔ search-replace complete\n";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// 6.  Flush everything
+// 6.  Payment gateways — activate MyFatoorah, disable PayPal
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Activate MyFatoorah plugin if not already active
+$plugin_slug = 'myfatoorah-woocommerce/myfatoorah-woocommerce.php';
+if ( ! is_plugin_active( $plugin_slug ) ) {
+    $result = activate_plugin( $plugin_slug );
+    if ( is_wp_error( $result ) ) {
+        echo "✗ Could not activate MyFatoorah: " . $result->get_error_message() . "\n";
+    } else {
+        echo "✔ MyFatoorah plugin activated\n";
+    }
+} else {
+    echo "✔ MyFatoorah already active\n";
+}
+
+// Disable PayPal gateway (set enabled = no in its settings)
+$paypal_settings            = get_option( 'woocommerce_paypal_settings', [] );
+$paypal_settings['enabled'] = 'no';
+update_option( 'woocommerce_paypal_settings', $paypal_settings );
+
+$paypal_ppcp                = get_option( 'woocommerce-ppcp-settings', [] );
+$paypal_ppcp['enabled']     = 'no';
+update_option( 'woocommerce-ppcp-settings', $paypal_ppcp );
+echo "✔ PayPal gateway disabled\n";
+
+// Set MyFatoorah UI preference (non-sensitive setting)
+$mf = get_option( 'woocommerce_myfatoorah_v2_settings', [] );
+$mf['newDesign'] = 'yes';
+update_option( 'woocommerce_myfatoorah_v2_settings', $mf );
+echo "✔ MyFatoorah settings applied\n";
+echo "⚠ ACTION REQUIRED: Go to WooCommerce → Settings → Payments → MyFatoorah\n";
+echo "  and enter your LIVE API key before accepting payments.\n";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 7.  Flush everything
 // ─────────────────────────────────────────────────────────────────────────────
 wp_cache_flush();
 if ( function_exists( 'rocket_clean_domain' ) ) rocket_clean_domain();   // WP Rocket
@@ -245,4 +280,6 @@ echo "Next steps:\n";
 echo "  1. Visit the live site and verify the homepage looks correct\n";
 echo "  2. Check the navigation menu includes Cart\n";
 echo "  3. Verify the logo size and footer copyright colour\n";
-echo "  4. Delete this file from the server: rm deploy-to-production.php\n\n";
+echo "  4. ⚠ Enter your MyFatoorah LIVE API key: WooCommerce → Settings → Payments → MyFatoorah\n";
+echo "  5. Test a payment end-to-end before announcing the site is live\n";
+echo "  6. Delete this file from the server: rm deploy-to-production.php\n\n";
