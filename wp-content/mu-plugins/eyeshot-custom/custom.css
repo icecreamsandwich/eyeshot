@@ -237,6 +237,67 @@ header .ast-builder-menu a:hover {
 
 /* "Book Your Tour" — no permanent highlight; only active/hover states apply */
 
+/* Header cart visibility */
+.ast-site-header-cart,
+.ast-site-header-cart .site-header-focus-item,
+.ast-builder-layout-element.ast-header-woo-cart,
+.woocommerce-custom-menu-item,
+.woocommerce-custom-menu-item .ast-cart-menu-wrap,
+.ast-site-header-cart a,
+.ast-site-header-cart .cart-container,
+.ast-site-header-cart .amount,
+.ast-site-header-cart .woocommerce-Price-amount,
+.ast-site-header-cart .count,
+.ast-site-header-cart .count:after,
+.ast-site-header-cart .astra-icon,
+.ast-site-header-cart svg,
+.ast-site-header-cart svg path {
+    color: #6B3E46 !important;
+    fill: #6B3E46 !important;
+    stroke: #6B3E46 !important;
+}
+
+.ast-site-header-cart .ast-cart-menu-wrap,
+.woocommerce-custom-menu-item .ast-cart-menu-wrap {
+    display: inline-flex !important;
+    align-items: center;
+    gap: .55rem;
+    white-space: nowrap;
+}
+
+.ast-site-header-cart .count,
+.woocommerce-custom-menu-item .count {
+    background: #6B3E46 !important;
+    color: #FFFFFF !important;
+    min-width: 1.45rem;
+    height: 1.45rem;
+    line-height: 1.45rem;
+    border-radius: 9999px;
+    font-size: .75rem !important;
+    font-weight: var(--fw-bold) !important;
+    text-align: center;
+    box-shadow: none !important;
+}
+
+.ast-site-header-cart .amount,
+.ast-site-header-cart .woocommerce-Price-amount {
+    font-weight: var(--fw-medium) !important;
+}
+
+/* Global search not needed */
+.ast-header-search,
+.ast-search-menu-icon,
+.ast-builder-layout-element-search,
+.site-header .search-form,
+.site-header .search-field,
+.site-header .search-submit,
+.wc-block-product-search,
+.wp-block-search,
+.dgwt-wcas-search-wrapp,
+.aws-search-form {
+    display: none !important;
+}
+
 /* Mobile hamburger */
 .ast-mobile-menu-trigger-fill svg,
 .menu-toggle svg { fill: var(--clr-dark); }
@@ -625,6 +686,12 @@ ul.products li.product,
     flex-direction: column;
 }
 
+ul.products li.product .astra-shop-thumbnail-wrap,
+ul.products li.product .astra-shop-summary-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
 ul.products li.product:hover,
 .wc-block-grid__product:hover {
     transform: translateY(-5px);
@@ -642,6 +709,11 @@ ul.products li.product a img,
 ul.products li.product:hover a img,
 .wc-block-grid__product:hover .wc-block-grid__product-image img {
     transform: scale(1.06);
+}
+
+/* Remove Astra hover-only action over product image */
+ul.products li.product .astra-shop-thumbnail-wrap .ast-on-card-button:not(.ast-onsale-card) {
+    display: none !important;
 }
 
 /* Product info area */
@@ -664,7 +736,9 @@ ul.products li.product .price,
 
 /* Sale badge */
 ul.products li.product .onsale,
-.wc-block-grid__product .wc-block-grid__product-onsale {
+.wc-block-grid__product .wc-block-grid__product-onsale,
+.woocommerce span.onsale,
+.woocommerce div.product span.onsale {
     background: var(--clr-primary) !important;
     color: var(--clr-white) !important;
     border-radius: var(--r-sm) !important;
@@ -675,12 +749,56 @@ ul.products li.product .onsale,
     padding: 4px 10px !important;
     top: 12px !important;
     left: 12px !important;
+    right: auto !important;
+    min-width: auto !important;
+    min-height: auto !important;
+    line-height: 1.2 !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid rgba(255,255,255,.35) !important;
 }
 
-/* Add to cart button on card */
+/* Single-product sale badge visibility */
+.single-product .woocommerce div.product span.onsale,
+.single-product.woocommerce span.onsale {
+    z-index: 3;
+}
+
+/* Center add-to-cart CTA in product card body */
 ul.products li.product .ast-woo-product-add-to-cart,
-ul.products li.product form.cart {
-    margin: auto 1rem 1rem;
+ul.products li.product form.cart,
+ul.products li.product .button.add_to_cart_button,
+ul.products li.product .added_to_cart,
+ul.products li.product a.button.product_type_simple,
+ul.products li.product a.button.product_type_variable,
+ul.products li.product a.button.product_type_grouped,
+ul.products li.product a.button.product_type_external {
+    margin: 1rem auto 1.25rem !important;
+}
+
+ul.products li.product .ast-woo-product-add-to-cart,
+ul.products li.product form.cart,
+ul.products li.product .astra-shop-summary-wrap .button,
+ul.products li.product .added_to_cart {
+    align-self: center;
+    text-align: center;
+}
+
+ul.products li.product .astra-shop-summary-wrap {
+    flex: 1 1 auto;
+}
+
+ul.products li.product .astra-shop-summary-wrap .button,
+ul.products li.product .astra-shop-summary-wrap .added_to_cart,
+ul.products li.product .ast-woo-product-add-to-cart .button {
+    display: inline-flex !important;
+    justify-content: center;
+    min-width: min(220px, calc(100% - 2rem));
+}
+
+ul.products li.product .price + .ast-woo-product-add-to-cart,
+ul.products li.product .price + .button,
+ul.products li.product .price + form.cart {
+    margin-top: 1rem !important;
 }
 
 
@@ -799,6 +917,28 @@ textarea::placeholder {
     color: var(--clr-muted);
 }
 
+/* Modern Cart quantity field visibility */
+#moderncart-slide-out .moderncart-cart-item-quantity input[type="number"],
+#moderncart-slide-out .moderncart-cart-item-quantity .moderncart-quantity__input {
+    background: #FFFFFF !important;
+    border: 1px solid var(--clr-border) !important;
+    color: var(--clr-dark) !important;
+    border-radius: var(--r-sm) !important;
+    box-shadow: none !important;
+}
+
+#moderncart-slide-out .moderncart-cart-item-quantity button {
+    background: var(--clr-primary-tint) !important;
+    color: var(--clr-dark) !important;
+    border: 1px solid var(--clr-border) !important;
+}
+
+#moderncart-slide-out .moderncart-cart-item-quantity button svg,
+#moderncart-slide-out .moderncart-cart-item-quantity button svg path {
+    fill: var(--clr-dark) !important;
+    color: var(--clr-dark) !important;
+}
+
 /* Form labels */
 label,
 .woocommerce form .form-row label,
@@ -879,7 +1019,7 @@ input[type="radio"] {
 .ast-footer-copyright p,
 footer .copyright,
 .site-footer p {
-    color: var(--clr-primary-pale) !important;
+    color: #000000 !important;
 }
 
 /* Hide site title/tagline if Astra option doesn't take effect */
