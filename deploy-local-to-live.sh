@@ -60,20 +60,24 @@ info "WP-CLI available: $WP_CLI"
 [ -f "${LOCAL_WP}/homepage-export.xml" ]         || error "homepage-export.xml not found locally"
 [ -d "${LOCAL_WP}/wp-content/themes/astra" ]     || error "Astra theme not found locally"
 [ -f "${LOCAL_WP}/wp-content/mu-plugins/eyeshot-custom.php" ] || error "mu-plugin not found locally"
+[ -f "${LOCAL_WP}/wp-content/mu-plugins/modern-cart-loader.php" ] || error "modern-cart-loader.php not found locally"
+[ -d "${LOCAL_WP}/wp-content/plugins/modern-cart" ]               || error "modern-cart plugin directory not found locally"
+[ -d "${LOCAL_WP}/wp-content/plugins/super-block-slider" ]        || error "super-block-slider plugin directory not found locally"
 
 info "All local files present"
 
 # ── Step 1: Transfer mu-plugins ───────────────────────────────────────────────
-step "Step 1/6 — Uploading mu-plugins (custom CSS & loader)"
+step "Step 1/8 — Uploading mu-plugins (custom CSS, loader & Modern Cart loader)"
 rsync -az --progress \
     -e "ssh -p ${SSH_PORT}" \
     "${LOCAL_WP}/wp-content/mu-plugins/eyeshot-custom.php" \
     "${LOCAL_WP}/wp-content/mu-plugins/eyeshot-custom/" \
+    "${LOCAL_WP}/wp-content/mu-plugins/modern-cart-loader.php" \
     "${SSH_USER}@${SSH_HOST}:${REMOTE_WP}/wp-content/mu-plugins/"
 info "mu-plugins uploaded"
 
 # ── Step 2: Transfer Astra theme ─────────────────────────────────────────────
-step "Step 2/6 — Uploading Astra theme (~may take a minute)"
+step "Step 2/8 — Uploading Astra theme (~may take a minute)"
 rsync -az --progress \
     -e "ssh -p ${SSH_PORT}" \
     "${LOCAL_WP}/wp-content/themes/astra/" \
@@ -81,15 +85,31 @@ rsync -az --progress \
 info "Astra theme uploaded"
 
 # ── Step 3: Transfer MyFatoorah plugin ───────────────────────────────────────
-step "Step 3/6 — Uploading MyFatoorah plugin"
+step "Step 3/8 — Uploading MyFatoorah plugin"
 rsync -az --progress \
     -e "ssh -p ${SSH_PORT}" \
     "${LOCAL_WP}/wp-content/plugins/myfatoorah-woocommerce/" \
     "${SSH_USER}@${SSH_HOST}:${REMOTE_WP}/wp-content/plugins/myfatoorah-woocommerce/"
 info "MyFatoorah plugin uploaded"
 
-# ── Step 4: Transfer uploads (new/changed files only, skip unchanged) ─────────
-step "Step 4/6 — Syncing uploads folder (skips files already on server)"
+# ── Step 4: Transfer Modern Cart plugin ──────────────────────────────────────
+step "Step 4/8 — Uploading Modern Cart plugin (CartFlows v1.0.8)"
+rsync -az --progress \
+    -e "ssh -p ${SSH_PORT}" \
+    "${LOCAL_WP}/wp-content/plugins/modern-cart/" \
+    "${SSH_USER}@${SSH_HOST}:${REMOTE_WP}/wp-content/plugins/modern-cart/"
+info "Modern Cart plugin uploaded"
+
+# ── Step 5: Transfer Super Block Slider plugin ────────────────────────────────
+step "Step 5/8 — Uploading Super Block Slider plugin"
+rsync -az --progress \
+    -e "ssh -p ${SSH_PORT}" \
+    "${LOCAL_WP}/wp-content/plugins/super-block-slider/" \
+    "${SSH_USER}@${SSH_HOST}:${REMOTE_WP}/wp-content/plugins/super-block-slider/"
+info "Super Block Slider plugin uploaded"
+
+# ── Step 6: Transfer uploads (new/changed files only, skip unchanged) ─────────
+step "Step 6/8 — Syncing uploads folder (skip files already on server)"
 warning "This may take several minutes for the first run (115 MB). Subsequent runs are fast."
 rsync -az --progress --ignore-existing \
     -e "ssh -p ${SSH_PORT}" \
@@ -97,8 +117,8 @@ rsync -az --progress --ignore-existing \
     "${SSH_USER}@${SSH_HOST}:${REMOTE_WP}/wp-content/uploads/"
 info "Uploads synced"
 
-# ── Step 5: Upload deploy scripts ────────────────────────────────────────────
-step "Step 5/6 — Uploading deploy scripts to live server"
+# ── Step 6: Upload deploy scripts ────────────────────────────────────────────
+step "Step 7/8 — Uploading deploy scripts to live server"
 rsync -az \
     -e "ssh -p ${SSH_PORT}" \
     "${LOCAL_WP}/deploy-to-production.php" \
@@ -106,8 +126,8 @@ rsync -az \
     "${SSH_USER}@${SSH_HOST}:${REMOTE_WP}/"
 info "Deploy scripts uploaded"
 
-# ── Step 6: Run DB changes on live server via WP-CLI ─────────────────────────
-step "Step 6/6 — Running DB deploy on live server"
+# ── Step 7: Run DB changes on live server via WP-CLI ─────────────────────────
+step "Step 8/8 — Running DB deploy on live server"
 
 echo ""
 echo "--- Running deploy-to-production.php ---"
@@ -128,7 +148,8 @@ echo ""
 step "Flushing WordPress cache on live server"
 ${SSH_CMD} "cd ${REMOTE_WP} && ${WP_CLI} cache flush --url=https://eyeshottourism.com" || true
 ${SSH_CMD} "cd ${REMOTE_WP} && ${WP_CLI} rewrite flush --url=https://eyeshottourism.com" || true
-info "Cache flushed"
+${SSH_CMD} "cd ${REMOTE_WP} && ${WP_CLI} litespeed-purge all --url=https://eyeshottourism.com" || true
+info "Cache flushed (object + rewrite + LiteSpeed)"
 
 # ── Done ─────────────────────────────────────────────────────────────────────
 echo ""

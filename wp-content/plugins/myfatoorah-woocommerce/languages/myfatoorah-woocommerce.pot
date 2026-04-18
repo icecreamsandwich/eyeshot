@@ -1,0 +1,534 @@
+# Copyright (C) 2026 MyFatoorah
+# This file is distributed under the GNU General Public License v3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: MyFatoorah - WooCommerce 2.2.11\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/myfatoorah-woocommerce\n"
+"Last-Translator: MyFatoorah Plugins Support <tech@myfatoorah.com>\n"
+"Language-Team: MyFatoorah Plugins Support <tech@myfatoorah.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-17T11:13:14+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: myfatoorah-woocommerce\n"
+
+#. Plugin Name of the plugin
+#: myfatoorah-woocommerce.php
+msgid "MyFatoorah - WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: myfatoorah-woocommerce.php
+msgid "https://myfatoorah.readme.io/docs/woocommerce/"
+msgstr ""
+
+#. Description of the plugin
+#: myfatoorah-woocommerce.php
+msgid "MyFatoorah Payment Gateway for WooCommerce. Integrated with MyFatoorah DHL/Aramex Shipping Methods."
+msgstr ""
+
+#. Author of the plugin
+#: myfatoorah-woocommerce.php
+msgid "MyFatoorah"
+msgstr ""
+
+#. Author URI of the plugin
+#: myfatoorah-woocommerce.php
+msgid "https://www.myfatoorah.com/"
+msgstr ""
+
+#: includes/admin/embedded.php:11
+#: includes/admin/v2.php:37
+msgid "Enable MyFatoorah"
+msgstr ""
+
+#: includes/admin/embedded.php:16
+#: includes/admin/v2.php:137
+msgid "This controls the title which the user sees during checkout."
+msgstr ""
+
+#: includes/admin/embedded.php:24
+#: includes/admin/v2.php:145
+msgid "This controls the description which the user sees during checkout."
+msgstr ""
+
+#: includes/admin/embedded.php:26
+#: includes/admin/v2.php:147
+msgid "Checkout with MyFatoorah Payment Gateway"
+msgstr ""
+
+#: includes/admin/embedded.php:30
+#: includes/admin/v2.php:151
+msgid "MyFatoorah Logo URL"
+msgstr ""
+
+#: includes/admin/embedded.php:32
+#: includes/admin/v2.php:153
+msgid "Please insert your logo URL which the user sees during checkout."
+msgstr ""
+
+#: includes/admin/shipping.php:13
+msgid "Enable MyFatoorah Shipping"
+msgstr ""
+
+#: includes/admin/shipping.php:18
+msgid "Title to be display on site"
+msgstr ""
+
+#: includes/admin/shipping.php:20
+#: includes/shipping/class-wc-shipping-myfatoorah.php:39
+msgid "MyFatoorah Shipping"
+msgstr ""
+
+#: includes/admin/shipping.php:24
+msgid "Shipping Methods"
+msgstr ""
+
+#: includes/admin/shipping.php:26
+msgid "DHL / Aramex"
+msgstr ""
+
+#: includes/admin/shipping.php:30
+msgid "Exclude countries from shipping rates"
+msgstr ""
+
+#: includes/admin/shipping.php:32
+msgid "Exclude countries from MyFatoorah shipping rates."
+msgstr ""
+
+#: includes/admin/v2.php:12
+msgid "Select Font"
+msgstr ""
+
+#: includes/admin/v2.php:40
+msgid "Merchant Configurations"
+msgstr ""
+
+#: includes/admin/v2.php:44
+msgid "Vendor's Country"
+msgstr ""
+
+#: includes/admin/v2.php:46
+msgid "Select your MyFatoorah vendor's country. After that, use the API token key that belongs to this country."
+msgstr ""
+
+#: includes/admin/v2.php:52
+msgid "Test Mode"
+msgstr ""
+
+#: includes/admin/v2.php:54
+msgid "Select Test Mode checkbox only when using test API Key."
+msgstr ""
+
+#: includes/admin/v2.php:56
+msgid "Enable Test Mode"
+msgstr ""
+
+#: includes/admin/v2.php:59
+msgid "API Key"
+msgstr ""
+
+#: includes/admin/v2.php:61
+msgid "Get your API Token Key from MyFatoorah Vendor Account."
+msgstr ""
+
+#: includes/admin/v2.php:66
+msgid "Webhook Secret Key"
+msgstr ""
+
+#: includes/admin/v2.php:72
+msgid "MyFatoorah Supplier Code"
+msgstr ""
+
+#: includes/admin/v2.php:73
+msgid "Add a valid and active supplier code that is created in MyFatoorah vendor account. Or, leave it empty."
+msgstr ""
+
+#: includes/admin/v2.php:82
+msgid "Order options"
+msgstr ""
+
+#: includes/admin/v2.php:86
+msgid "Invoice items"
+msgstr ""
+
+#: includes/admin/v2.php:88
+msgid "While disabling Invoice Items, MyFatoorah will send total order amount to the invoice page. In case of enabling MyFatoorah shipping, you should enable this option."
+msgstr ""
+
+#: includes/admin/v2.php:90
+msgid "Enable Invoice items"
+msgstr ""
+
+#: includes/admin/v2.php:95
+msgid "How to mark the successful payment in the Admin Orders Page."
+msgstr ""
+
+#: includes/admin/v2.php:105
+msgid "Payment Success URL"
+msgstr ""
+
+#: includes/admin/v2.php:107
+msgid "Please insert your Success URL (optional)."
+msgstr ""
+
+#: includes/admin/v2.php:114
+msgid "Payment Fail URL"
+msgstr ""
+
+#: includes/admin/v2.php:116
+msgid "Please insert your Failed URL (optional)."
+msgstr ""
+
+#: includes/admin/v2.php:123
+msgid "Debug Mode"
+msgstr ""
+
+#: includes/admin/v2.php:125
+msgid "Log MyFatoorah events in "
+msgstr ""
+
+#: includes/admin/v2.php:128
+msgid "Enable logging"
+msgstr ""
+
+#: includes/admin/v2.php:131
+msgid "Front-End"
+msgstr ""
+
+#: includes/admin/v2.php:159
+msgid "List Payment Options"
+msgstr ""
+
+#: includes/admin/v2.php:161
+msgid "Click on save changes to synchronize the payment gateways with your MyFatoorah account."
+msgstr ""
+
+#: includes/admin/v2.php:164
+msgid "List All Enabled Gateways in Checkout Page"
+msgstr ""
+
+#: includes/admin/v2.php:165
+msgid "Redirect to MyFatoorah Invoice Page"
+msgstr ""
+
+#: includes/admin/v2.php:170
+msgid "Theme"
+msgstr ""
+
+#: includes/admin/v2.php:174
+msgid "New Design"
+msgstr ""
+
+#: includes/admin/v2.php:176
+msgid "Old Design is deprecated and it will be removed soon."
+msgstr ""
+
+#: includes/admin/v2.php:178
+msgid "Enable New Design"
+msgstr ""
+
+#: includes/admin/v2.php:181
+msgid "Apple Pay Embedded"
+msgstr ""
+
+#: includes/admin/v2.php:183
+msgid "Create a folder named \".well-known\" in the root path and copy the apple-developer-merchantid-domain-association file which you received from MyFatoorah support team (tech@myfatoorah.com)"
+msgstr ""
+
+#: includes/admin/v2.php:185
+msgid "Enable Apple Pay Embedded"
+msgstr ""
+
+#: includes/admin/v2.php:188
+msgid "Save Card Information"
+msgstr ""
+
+#: includes/admin/v2.php:190
+msgid "This feature allows the customers to save their card details for the future payments."
+msgstr ""
+
+#: includes/admin/v2.php:193
+msgid "Enable MyFatoorah save card information feature for logged in users"
+msgstr ""
+
+#: includes/admin/v2.php:196
+msgid "Embedded Icons"
+msgstr ""
+
+#: includes/admin/v2.php:198
+msgid "Hide Embedded Payment Icons"
+msgstr ""
+
+#: includes/admin/v2.php:201
+msgid "Theme styling"
+msgstr ""
+
+#: includes/admin/v2.php:203
+msgid "The following options affect how the front-end design will be displayed."
+msgstr ""
+
+#: includes/admin/v2.php:207
+msgid "Back to default theme"
+msgstr ""
+
+#: includes/admin/v2.php:208
+msgid "Click to reset theme"
+msgstr ""
+
+#: includes/admin/v2.php:211
+msgid "Font Family"
+msgstr ""
+
+#: includes/admin/v2.php:218
+msgid "Font Size"
+msgstr ""
+
+#: includes/admin/v2.php:226
+msgid "Text Color"
+msgstr ""
+
+#: includes/admin/v2.php:234
+msgid "Theme Color"
+msgstr ""
+
+#: includes/payments/blocks/MyFatoorahV2.php:78
+#: includes/payments/class-wc-gateway-myfatoorah.php:631
+msgid "MyFatoorah forces SSL checkout Payment. Your checkout is not secure! Please, contact the site admin to enable SSL and ensure that the server has a valid SSL certificate."
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah-embedded.php:28
+msgid "Embedded"
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah-embedded.php:32
+msgid "Deprecated and it will be removed soon, use MyFatoorah Card New Design"
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah-embedded.php:33
+msgid "MyFatoorah - Embedded"
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah-embedded.php:142
+msgid "You should disable the new design option in the \"MyFatoorah - Cards\" payment Settings first, to enable this payment method"
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:30
+msgid "Cards"
+msgstr ""
+
+#. translators: %s: version number
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:33
+msgid "MyFatoorah Debit/Credit Card payment version %s."
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:34
+msgid "MyFatoorah - Cards"
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:229
+msgid "You can not disable invoice items option while MyFatoorah Shipping is enabled"
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:260
+msgid "MyFatoorah Embedded has been disabled."
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:287
+msgid "Please make sure to select New design and List all gateway option to enable Apple Pay Embedded."
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:303
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:334
+msgid "Error: "
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:329
+msgid "Supplier code is not active in vendor account, please contact MyFatoorah team to activate it."
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:400
+msgid "There are no payment methods available on your account, please contact your account manager."
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah.php:157
+msgid "please, refund manually for this order"
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah.php:162
+msgid "system can't refund order with status "
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah.php:272
+msgid "Total amount for order #"
+msgstr ""
+
+#. translators: %s: the product name
+#: includes/payments/class-wc-gateway-myfatoorah.php:380
+msgid "The \"%s\" Item has non number unit price."
+msgstr ""
+
+#. translators: %s: Payment Code
+#: includes/payments/class-wc-gateway-myfatoorah.php:659
+msgid "MyFatoorah %s has been disabled."
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah.php:668
+#: includes/payments/class-wc-gateway-myfatoorah.php:695
+msgid "MyFatoorah Shipping has been disabled."
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah.php:706
+msgid "Copy this link to your MyFatoorah Account. After that, Copy your Webhook Secret Key from MyFatoorah Account in the above field."
+msgstr ""
+
+#: includes/payments/class-wc-gateway-myfatoorah.php:718
+msgid "You should add the API key in the \"MyFatoorah - Cards\" payment Settings first."
+msgstr ""
+
+#: includes/PluginPaymentMyfatoorahWoocommerce.php:95
+msgid "The Order is not found. Please, contact the store admin."
+msgstr ""
+
+#: includes/PluginShippingMyfatoorahWoocommerce.php:135
+msgid "MyFatoorah: kindly select a country"
+msgstr ""
+
+#: includes/PluginShippingMyfatoorahWoocommerce.php:147
+msgid "Select Town / City"
+msgstr ""
+
+#. translators: %s: version number
+#: includes/shipping/class-wc-shipping-myfatoorah.php:38
+msgid "Shipping via MyFatoorah using DHL/Aramex Shipping Methods version %s."
+msgstr ""
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:119
+msgid "Kindly, review your MyFatoorah admin configuration due to a wrong entry to get MyFatoorah shipping cities."
+msgstr ""
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:169
+msgid "Please make sure products have dimensions and weight as well to get right MyFatoorah Shipping rates."
+msgstr ""
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:208
+msgid "MyFatoorah Free Shipping"
+msgstr ""
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:223
+msgid "MyFatoorah shipping can not be calculated due to: "
+msgstr ""
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:250
+msgid "You should add the API key in the \"MyFatoorah - Cards\" payment Settings first, to enable MyFatoorah Shipping"
+msgstr ""
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:256
+msgid "You should enable invoice items option in the \"MyFatoorah - Cards\" payment Settings first, to enable MyFatoorah Shipping"
+msgstr ""
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:263
+msgid "You should select at least one Shipping Method, to enable MyFatoorah Shipping"
+msgstr ""
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:278
+msgid "You should enable at least one of MyFatoorah payment methods, to enable MyFatoorah Shipping"
+msgstr ""
+
+#: includes/templates/paymentFields.php:49
+#: build/index.js:1
+msgid "Or "
+msgstr ""
+
+#: includes/templates/paymentFields.php:54
+#: build/index.js:1
+msgid "How would you like to pay?"
+msgstr ""
+
+#: includes/templates/paymentFields.php:82
+#: build/index.js:1
+msgid "Pay With"
+msgstr ""
+
+#: includes/templates/paymentFields.php:100
+#: build/index.js:1
+msgid "Insert Card Details"
+msgstr ""
+
+#: includes/templates/paymentFields.php:110
+#: build/index.js:1
+msgid "Pay Now"
+msgstr ""
+
+#: includes/templates/sectionForm.php:5
+#: build/index.js:1
+msgid "Name On Card"
+msgstr ""
+
+#: includes/templates/sectionForm.php:6
+#: build/index.js:1
+msgid "Number"
+msgstr ""
+
+#: includes/templates/sectionForm.php:7
+#: build/index.js:1
+msgid "MM / YY"
+msgstr ""
+
+#: includes/templates/sectionForm.php:8
+#: build/index.js:1
+msgid "CVV"
+msgstr ""
+
+#: includes/templates/sectionForm.php:48
+#: build/index.js:1
+msgid "Save card number for future payments"
+msgstr ""
+
+#: includes/templates/sectionForm.php:49
+#: build/index.js:1
+msgid "Use another card"
+msgstr ""
+
+#: includes/templates/sectionForm.php:51
+#: build/index.js:1
+msgid "Delete Card"
+msgstr ""
+
+#: includes/templates/sectionForm.php:52
+#: build/index.js:1
+msgid "Are you sure you want to remove this card?"
+msgstr ""
+
+#: includes/templates/sectionForm.php:53
+#: build/index.js:1
+msgid "Yes"
+msgstr ""
+
+#: includes/templates/sectionForm.php:54
+#: build/index.js:1
+msgid "No"
+msgstr ""
+
+#: myfatoorah-woocommerce.php:114
+msgid "View MyFatoorah documentation"
+msgstr ""
+
+#: myfatoorah-woocommerce.php:115
+msgid "View MyFatoorah API docs"
+msgstr ""
+
+#: myfatoorah-woocommerce.php:116
+msgid "Visit premium customer support"
+msgstr ""
+
+#: myfatoorah-woocommerce.php:208
+msgid "MyFatoorah - WooCommerce plugin needs WooCommerce plugin to be installed and active."
+msgstr ""
+
+#: includes/admin/embedded.php:30
+#: includes/admin/v2.php:151
+msgid "AUTHENTICATION_FAILED."
+msgstr ""

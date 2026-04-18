@@ -69,6 +69,10 @@ $astra['footer-bg-color']        = '#0E3FA5';
 $astra['footer-color']           = '#DBEAFE';
 $astra['footer-link-color']      = '#93C5FD';
 $astra['footer-link-h-color']    = '#FFFFFF';
+$astra['footer-copyright-editor'] = 'Copyright [copyright] [current_year] [site_title] | Powered by Eyeshot';
+
+// WooCommerce shop
+$astra['product-sale-notification'] = 'default'; // ensures sale badge is always rendered
 
 // Header
 $astra['sticky-header']          = 1;
@@ -91,51 +95,95 @@ update_option( 'astra-settings', $astra );
 echo "✔ Astra settings applied\n";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// 3.  Navigation — ensure Cart is in the primary menu
+// 3.  Navigation — rebuild primary menu with exactly 7 items
+//     Home | About | Book Your Tour | Services | Gallery | Contact | Cart
 // ─────────────────────────────────────────────────────────────────────────────
 $locations = get_nav_menu_locations();
 $menu_id   = isset( $locations['primary'] ) ? (int) $locations['primary'] : 0;
 
 if ( ! $menu_id ) {
-    // Fallback: find menu by name
     $menu = get_term_by( 'name', 'Main Navigation', 'nav_menu' );
-    if ( $menu ) $menu_id = (int) $menu->term_id;
-}
-
-if ( $menu_id ) {
-    // Find the Cart page by slug
-    $cart_page = get_page_by_path( 'cart' );
-    if ( ! $cart_page ) {
-        $cart_page = wc_get_page_id( 'cart' ) ? get_post( wc_get_page_id( 'cart' ) ) : null;
-    }
-
-    if ( $cart_page ) {
-        $existing = wp_get_nav_menu_items( $menu_id );
-        $already  = false;
-        foreach ( (array) $existing as $item ) {
-            if ( (int) $item->object_id === (int) $cart_page->ID ) {
-                $already = true;
-                break;
-            }
-        }
-        if ( ! $already ) {
-            wp_update_nav_menu_item( $menu_id, 0, [
-                'menu-item-title'     => 'Cart',
-                'menu-item-object'    => 'page',
-                'menu-item-object-id' => $cart_page->ID,
-                'menu-item-type'      => 'post_type',
-                'menu-item-status'    => 'publish',
-            ] );
-            echo "✔ Cart added to primary navigation (page ID {$cart_page->ID})\n";
-        } else {
-            echo "✔ Cart already in navigation — skipped\n";
-        }
+    if ( $menu ) {
+        $menu_id = (int) $menu->term_id;
     } else {
-        echo "⚠ Cart page not found — skipping nav item\n";
+        $menu_id = wp_create_nav_menu( 'Main Navigation' );
+        $locs             = get_nav_menu_locations();
+        $locs['primary']  = $menu_id;
+        set_theme_mod( 'nav_menu_locations', $locs );
+        echo "✔ Created new 'Main Navigation' menu\n";
     }
-} else {
-    echo "⚠ Primary menu not found — skipping cart nav item\n";
 }
+
+// Wipe all existing items so we start fresh (removes any auto-added extras)
+$old_items = wp_get_nav_menu_items( $menu_id );
+foreach ( (array) $old_items as $old_item ) {
+    wp_delete_post( (int) $old_item->ID, true );
+}
+
+// Helper: find a page by slug, fall back to title search
+function eyeshot_find_page( $slug, $title = '' ) {
+    $page = get_page_by_path( $slug );
+    if ( ! $page && $title ) {
+        $results = get_posts( [
+            'post_type'   => 'page',
+            'title'       => $title,
+            'numberposts' => 1,
+            'post_status' => 'publish',
+        ] );
+        $page = $results ? $results[0] : null;
+    }
+    return $page;
+}
+
+// Helper: append a page item to the menu
+function eyeshot_add_menu_page( $menu_id, $label, $page, $position ) {
+    if ( ! $page ) { return; }
+    wp_update_nav_menu_item( $menu_id, 0, [
+        'menu-item-title'     => $label,
+        'menu-item-object'    => 'page',
+        'menu-item-object-id' => (int) $page->ID,
+        'menu-item-type'      => 'post_type',
+        'menu-item-status'    => 'publish',
+        'menu-item-position'  => $position,
+    ] );
+}
+
+$pos = 1;
+
+// 1. Home — custom link to site root
+wp_update_nav_menu_item( $menu_id, 0, [
+    'menu-item-title'    => 'Home',
+    'menu-item-url'      => home_url( '/' ),
+    'menu-item-type'     => 'custom',
+    'menu-item-status'   => 'publish',
+    'menu-item-position' => $pos++,
+] );
+
+// 2. About
+eyeshot_add_menu_page( $menu_id, 'About', eyeshot_find_page( 'about', 'About' ) ?? eyeshot_find_page( 'about-us', 'About Us' ), $pos++ );
+
+// 3. Book Your Tour — prefer dedicated page, fall back to WooCommerce shop
+$book_page = eyeshot_find_page( 'book-your-tour', 'Book Your Tour' )
+          ?? eyeshot_find_page( 'book-tour', 'Book Tour' )
+          ?? ( ( $shop_id = wc_get_page_id( 'shop' ) ) > 0 ? get_post( $shop_id ) : null );
+eyeshot_add_menu_page( $menu_id, 'Book Your Tour', $book_page, $pos++ );
+
+// 4. Services
+eyeshot_add_menu_page( $menu_id, 'Services', eyeshot_find_page( 'services', 'Services' ), $pos++ );
+
+// 5. Gallery
+eyeshot_add_menu_page( $menu_id, 'Gallery', eyeshot_find_page( 'gallery', 'Gallery' ), $pos++ );
+
+// 6. Contact
+eyeshot_add_menu_page( $menu_id, 'Contact', eyeshot_find_page( 'contact', 'Contact' ), $pos++ );
+
+// 7. Cart
+$cart_wc_id = wc_get_page_id( 'cart' );
+if ( $cart_wc_id > 0 ) {
+    eyeshot_add_menu_page( $menu_id, 'Cart', get_post( $cart_wc_id ), $pos++ );
+}
+
+echo "✔ Primary menu rebuilt: Home → About → Book Your Tour → Services → Gallery → Contact → Cart\n";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 4.  Homepage content — import from homepage-export.xml
@@ -168,6 +216,44 @@ if ( file_exists( $xml_file ) ) {
     echo "⚠ homepage-export.xml not found — skipping homepage import.\n";
     echo "  Upload homepage-export.xml to the same folder as this script, or\n";
     echo "  import it manually via WP Admin → Tools → Import → WordPress.\n";
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 5.  Contact page — update map to correct address
+//     Street 69, Zone 55, Building 9, Doha, Bin Al Ishaq, Al Aziziya
+// ─────────────────────────────────────────────────────────────────────────────
+$contact_page = get_page_by_path( 'contact' );
+if ( ! $contact_page ) {
+    $pages = get_posts( [
+        'post_type'   => 'page',
+        'title'       => 'Contact',
+        'numberposts' => 1,
+        'post_status' => 'publish',
+    ] );
+    $contact_page = $pages ? $pages[0] : null;
+}
+
+if ( $contact_page ) {
+    $new_map_url = 'https://maps.google.com/maps?q=Street+69%2C+Zone+55%2C+Building+9%2C+Al+Aziziya%2C+Doha%2C+Qatar&output=embed';
+    $content     = $contact_page->post_content;
+    $updated     = preg_replace(
+        '/(<iframe[^>]+src=")[^"]*google[^"]*(")/i',
+        '$1' . $new_map_url . '$2',
+        $content
+    );
+    if ( $updated && $updated !== $content ) {
+        wp_update_post( [ 'ID' => $contact_page->ID, 'post_content' => $updated ] );
+        echo "✔ Contact page map updated to Al Aziziya address\n";
+    } else {
+        $iframe = '<iframe src="' . $new_map_url . '" width="100%" height="400" '
+                . 'style="border:0;width:100%;" allowfullscreen="" loading="lazy" '
+                . 'referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        echo "⚠ No existing Google Maps iframe found on contact page.\n";
+        echo "  Insert this block manually into the Contact page Custom HTML block:\n";
+        echo "  " . $iframe . "\n";
+    }
+} else {
+    echo "⚠ Contact page not found — skipping map update\n";
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -206,12 +292,33 @@ echo "⚠ ACTION REQUIRED: Go to WooCommerce → Settings → Payments → MyFat
 echo "  and enter your LIVE API key before accepting payments.\n";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// 7.  Flush everything
+// 7.  Activate required plugins (slider, etc.)
+// ─────────────────────────────────────────────────────────────────────────────
+$plugins_to_activate = [
+    'super-block-slider/super-block-slider.php' => 'Super Block Slider',
+    'modern-cart/modern-cart.php'               => 'Modern Cart',
+];
+foreach ( $plugins_to_activate as $slug => $label ) {
+    if ( ! is_plugin_active( $slug ) ) {
+        $result = activate_plugin( $slug );
+        if ( is_wp_error( $result ) ) {
+            echo "✗ Could not activate {$label}: " . $result->get_error_message() . "\n";
+        } else {
+            echo "✔ {$label} plugin activated\n";
+        }
+    } else {
+        echo "✔ {$label} already active\n";
+    }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 8.  Flush everything
 // ─────────────────────────────────────────────────────────────────────────────
 wp_cache_flush();
-if ( function_exists( 'rocket_clean_domain' ) ) rocket_clean_domain();   // WP Rocket
-if ( function_exists( 'w3tc_flush_all' )      ) w3tc_flush_all();        // W3 Total Cache
-if ( function_exists( 'wpfc_clear_all_cache' ) ) wpfc_clear_all_cache(); // WP Fastest Cache
+if ( function_exists( 'rocket_clean_domain' ) )  rocket_clean_domain();   // WP Rocket
+if ( function_exists( 'w3tc_flush_all' )      )  w3tc_flush_all();        // W3 Total Cache
+if ( function_exists( 'wpfc_clear_all_cache' ) ) wpfc_clear_all_cache();  // WP Fastest Cache
+do_action( 'litespeed_purge_all' );                                       // LiteSpeed Cache
 
 // Also flush rewrite rules
 global $wp_rewrite;

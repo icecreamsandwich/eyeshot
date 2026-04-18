@@ -1,0 +1,533 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MyFatoorah - WooCommerce 2.2.11\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/myfatoorah-woocommerce\n"
+"Last-Translator: MyFatoorah Plugins Support <tech@myfatoorah.com>\n"
+"Language-Team: MyFatoorah Plugins Support <tech@myfatoorah.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-17T11:13:14+00:00\n"
+"PO-Revision-Date: 2026-02-17 13:18+0200\n"
+"Language: ar\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Domain: myfatoorah-woocommerce\n"
+
+#. Plugin Name of the plugin
+#: myfatoorah-woocommerce.php
+msgid "MyFatoorah - WooCommerce"
+msgstr "بوابة الدفع ماي فاتورة لـلووكومرس"
+
+#. Plugin URI of the plugin
+#: myfatoorah-woocommerce.php
+msgid "https://myfatoorah.readme.io/docs/woocommerce/"
+msgstr "https://myfatoorah.readme.io/docs/woocommerce/"
+
+#. Description of the plugin
+#: myfatoorah-woocommerce.php
+msgid "MyFatoorah Payment Gateway for WooCommerce. Integrated with MyFatoorah DHL/Aramex Shipping Methods."
+msgstr "ماي فاتورة هي بوابة دفع خاصة للووكومرس. تدعم الشحن عن طريق الأرامكس وال DHL."
+
+#. Author of the plugin
+#: myfatoorah-woocommerce.php
+msgid "MyFatoorah"
+msgstr "ماي فاتورة"
+
+#. Author URI of the plugin
+#: myfatoorah-woocommerce.php
+msgid "https://www.myfatoorah.com/"
+msgstr "https://www.myfatoorah.com/"
+
+#: includes/admin/embedded.php:11
+#: includes/admin/v2.php:37
+msgid "Enable MyFatoorah"
+msgstr "تفعيل ماي فاتورة"
+
+#: includes/admin/embedded.php:16
+#: includes/admin/v2.php:137
+msgid "This controls the title which the user sees during checkout."
+msgstr "يتحكم هذا في العنوان الذي يراه المستخدم أثناء الدفع."
+
+#: includes/admin/embedded.php:24
+#: includes/admin/v2.php:145
+msgid "This controls the description which the user sees during checkout."
+msgstr "يتحكم هذا في الوصف الذي يراه المستخدم أثناء الدفع."
+
+#: includes/admin/embedded.php:26
+#: includes/admin/v2.php:147
+msgid "Checkout with MyFatoorah Payment Gateway"
+msgstr "الدفع من خلال بوابة الدفع ماي فاتورة"
+
+#: includes/admin/embedded.php:30
+#: includes/admin/v2.php:151
+msgid "MyFatoorah Logo URL"
+msgstr "الرابط الخاص بشعار الدفع"
+
+#: includes/admin/embedded.php:32
+#: includes/admin/v2.php:153
+msgid "Please insert your logo URL which the user sees during checkout."
+msgstr "يرجى إدخال الرابط الخاص بالشعار الذي يراه المستخدم في صفحة الدفع."
+
+#: includes/admin/shipping.php:13
+msgid "Enable MyFatoorah Shipping"
+msgstr "تفعيل الشحن عن طريق ماي فاتورة"
+
+#: includes/admin/shipping.php:18
+msgid "Title to be display on site"
+msgstr "العنوان الذي سوف يعرض الموقع"
+
+#: includes/admin/shipping.php:20
+#: includes/shipping/class-wc-shipping-myfatoorah.php:39
+msgid "MyFatoorah Shipping"
+msgstr "شحن ماي فاتورة"
+
+#: includes/admin/shipping.php:24
+msgid "Shipping Methods"
+msgstr "طرق الشحن"
+
+#: includes/admin/shipping.php:26
+msgid "DHL / Aramex"
+msgstr "دي إتش إل / أرامكس"
+
+#: includes/admin/shipping.php:30
+msgid "Exclude countries from shipping rates"
+msgstr "استبعاد البلدان من أسعار الشحن"
+
+#: includes/admin/shipping.php:32
+msgid "Exclude countries from MyFatoorah shipping rates."
+msgstr "البلدان التي لن يتم استخدام شحن ماي فاتورة بها."
+
+#: includes/admin/v2.php:12
+msgid "Select Font"
+msgstr "اختار الخط"
+
+#: includes/admin/v2.php:40
+msgid "Merchant Configurations"
+msgstr "إعدادات البائع"
+
+#: includes/admin/v2.php:44
+msgid "Vendor's Country"
+msgstr "بلد البائع"
+
+#: includes/admin/v2.php:46
+msgid "Select your MyFatoorah vendor's country. After that, use the API token key that belongs to this country."
+msgstr "اختر بلد بائع حساب ماي فاتورة الخاص بك. بعد ذلك، استخدم رمز التكامل الذي ينتمي إلى هذا البلد."
+
+#: includes/admin/v2.php:52
+msgid "Test Mode"
+msgstr "وضع الاختبار"
+
+#: includes/admin/v2.php:54
+msgid "Select Test Mode checkbox only when using test API Key."
+msgstr "يرجى تحديد وضع الاختبار فقط عند استخدام رمز التكامل الخاص بوضع التجربة."
+
+#: includes/admin/v2.php:56
+msgid "Enable Test Mode"
+msgstr "تفعيل نظام الاختبار"
+
+#: includes/admin/v2.php:59
+msgid "API Key"
+msgstr "رمز التكامل"
+
+#: includes/admin/v2.php:61
+msgid "Get your API Token Key from MyFatoorah Vendor Account."
+msgstr "احصل على رمز التكامل الخاص بك من حساب ماي فاتورة."
+
+#: includes/admin/v2.php:66
+msgid "Webhook Secret Key"
+msgstr "مفتاح الويب هوك السري"
+
+#: includes/admin/v2.php:72
+msgid "MyFatoorah Supplier Code"
+msgstr "كود المورد في ماي فاتورة"
+
+#: includes/admin/v2.php:73
+msgid "Add a valid and active supplier code that is created in MyFatoorah vendor account. Or, leave it empty."
+msgstr "أضف كود مورد صالح وفعال تم إنشاؤه في حساب البائع في ماي فاتورة. أو اتركها فارغة."
+
+#: includes/admin/v2.php:82
+msgid "Order options"
+msgstr "إعدادات الطلب"
+
+#: includes/admin/v2.php:86
+msgid "Invoice items"
+msgstr "عرض عناصر الطلب"
+
+#: includes/admin/v2.php:88
+msgid "While disabling Invoice Items, MyFatoorah will send total order amount to the invoice page. In case of enabling MyFatoorah shipping, you should enable this option."
+msgstr "عند إيقاف هذه الخاصية، سوف يتم إنشاء الفاتورة باستخدام إجمالي مبلغ الطلب. في حالة تفعيل شحن ماي فاتورة يجب تفعيل هذه الخاصية حتي يتم إرسال أسماء و أبعاد العناصر المتوافرة للشحن."
+
+#: includes/admin/v2.php:90
+msgid "Enable Invoice items"
+msgstr "تفعيل عرض عناصر الطلب في حساب ماي فاتورة"
+
+#: includes/admin/v2.php:95
+msgid "How to mark the successful payment in the Admin Orders Page."
+msgstr "تحديد حالة الطلبات الناجحة التي سوف تظهر في صفحة الطلبات في منصة مسؤول الموقع."
+
+#: includes/admin/v2.php:105
+msgid "Payment Success URL"
+msgstr "الرابط الخاص بنجاح الدفع"
+
+#: includes/admin/v2.php:107
+msgid "Please insert your Success URL (optional)."
+msgstr "الرجاء إدخال رابط صفحة نجاح الدفع (اختياري)."
+
+#: includes/admin/v2.php:114
+msgid "Payment Fail URL"
+msgstr "الرابط الخاص بفشل الدفع"
+
+#: includes/admin/v2.php:116
+msgid "Please insert your Failed URL (optional)."
+msgstr "الرجاء إدخال رابط صفحة فشل الدفع (اختياري)."
+
+#: includes/admin/v2.php:123
+msgid "Debug Mode"
+msgstr "وضع التشخيص البرمجي"
+
+#: includes/admin/v2.php:125
+msgid "Log MyFatoorah events in "
+msgstr "تسجيل الأحداث الخاصة بماي فاتورة في ملف "
+
+#: includes/admin/v2.php:128
+msgid "Enable logging"
+msgstr "تفعيل التسجيل"
+
+#: includes/admin/v2.php:131
+msgid "Front-End"
+msgstr "إعدادات صفحة الدفع"
+
+#: includes/admin/v2.php:159
+msgid "List Payment Options"
+msgstr "قائمة خيارات الدفع"
+
+#: includes/admin/v2.php:161
+msgid "Click on save changes to synchronize the payment gateways with your MyFatoorah account."
+msgstr "لمزامنة بوابات الدفع كحساب ماي فاتورة الخاص بك، يجب النقر علي حفظ التغييرات."
+
+#: includes/admin/v2.php:164
+msgid "List All Enabled Gateways in Checkout Page"
+msgstr "سرد جميع طرق الدفع المفعلة في صفحة الدفع"
+
+#: includes/admin/v2.php:165
+msgid "Redirect to MyFatoorah Invoice Page"
+msgstr "إعادة التوجيه لصفحة ماي فاتورة للدفع"
+
+#: includes/admin/v2.php:170
+msgid "Theme"
+msgstr "إعدادات العرض"
+
+#: includes/admin/v2.php:174
+msgid "New Design"
+msgstr "التصميم الجديد"
+
+#: includes/admin/v2.php:176
+msgid "Old Design is deprecated and it will be removed soon."
+msgstr "سوف يتم إلغاء تطوير التصميم القديم قريبا وستتم إزالته من الإضافة."
+
+#: includes/admin/v2.php:178
+msgid "Enable New Design"
+msgstr "تفعيل التصميم الجديد"
+
+#: includes/admin/v2.php:181
+msgid "Apple Pay Embedded"
+msgstr "عرض زر أبل باي"
+
+#: includes/admin/v2.php:183
+msgid "Create a folder named \".well-known\" in the root path and copy the apple-developer-merchantid-domain-association file which you received from MyFatoorah support team (tech@myfatoorah.com)"
+msgstr "قم بإنشاء مجلد باسم \".well-known\" في المسار الرئيسي للموقع، ثم انسخ ملف apple-developer-merchantid-domain-association الذي استلمته من فريق الدعم بماي فاتورة (tech@myfatoorah.com)"
+
+#: includes/admin/v2.php:185
+msgid "Enable Apple Pay Embedded"
+msgstr "تفعيل عرض زر أبل باي"
+
+#: includes/admin/v2.php:188
+msgid "Save Card Information"
+msgstr "تفعيل خاصية ماي فاتورة للحفاظ على بيانات بطاقة المستخدمين المسجلين لديك"
+
+#: includes/admin/v2.php:190
+msgid "This feature allows the customers to save their card details for the future payments."
+msgstr "هذه الخاصية تتيح للعملاء الحفاظ على بيانات البطاقة لأي مشتريات مستقبلية."
+
+#: includes/admin/v2.php:193
+msgid "Enable MyFatoorah save card information feature for logged in users"
+msgstr "تفعيل خاصية ماي فاتورة للحفاظ على بيانات البطاقة للمستخدمين المسجلين لديك"
+
+#: includes/admin/v2.php:196
+msgid "Embedded Icons"
+msgstr "أيقونات البطاقات"
+
+#: includes/admin/v2.php:198
+msgid "Hide Embedded Payment Icons"
+msgstr "إخفاء أيقونات بطاقات الدفع"
+
+#: includes/admin/v2.php:201
+msgid "Theme styling"
+msgstr "إعدادات التصميم"
+
+#: includes/admin/v2.php:203
+msgid "The following options affect how the front-end design will be displayed."
+msgstr "هذه الإعدادات تتحكم في شكل وألوان التصميم."
+
+#: includes/admin/v2.php:207
+msgid "Back to default theme"
+msgstr "إعادة ضبط التصميم الإفتراضي"
+
+#: includes/admin/v2.php:208
+msgid "Click to reset theme"
+msgstr "اضغط لاستعادة التصميم الإفتراضي"
+
+#: includes/admin/v2.php:211
+msgid "Font Family"
+msgstr "نوع الخط"
+
+#: includes/admin/v2.php:218
+msgid "Font Size"
+msgstr "حجم الخط"
+
+#: includes/admin/v2.php:226
+msgid "Text Color"
+msgstr "لون الخط"
+
+#: includes/admin/v2.php:234
+msgid "Theme Color"
+msgstr "لون العرض"
+
+#: includes/payments/blocks/MyFatoorahV2.php:78
+#: includes/payments/class-wc-gateway-myfatoorah.php:631
+msgid "MyFatoorah forces SSL checkout Payment. Your checkout is not secure! Please, contact the site admin to enable SSL and ensure that the server has a valid SSL certificate."
+msgstr "ماي فاتورة تفرض دفع SSL . عمليات الدفع الخاص بك غير آمنة! يرجى الاتصال بمسؤول الموقع لتفعيل SSL و التأكد من أن الخادم لديه شهادة SSL صالحة."
+
+#: includes/payments/class-wc-gateway-myfatoorah-embedded.php:28
+msgid "Embedded"
+msgstr "الدفع المباشر"
+
+#: includes/payments/class-wc-gateway-myfatoorah-embedded.php:32
+msgid "Deprecated and it will be removed soon, use MyFatoorah Card New Design"
+msgstr "سوف يتم إلغاء تطوير الدفع المباشر قريبا وستتم إزالته من الإضافة، الرجاء استخدام ماي فاتورة للبطاقات التصميم الجديد"
+
+#: includes/payments/class-wc-gateway-myfatoorah-embedded.php:33
+msgid "MyFatoorah - Embedded"
+msgstr "الدفع المباشر"
+
+#: includes/payments/class-wc-gateway-myfatoorah-embedded.php:142
+msgid "You should disable the new design option in the \"MyFatoorah - Cards\" payment Settings first, to enable this payment method"
+msgstr "يجب أولاً تعطيل خيار التصميم الجديد في إعدادات الدفع \"ماي فاتورة - البطاقات\" لتفعيل هذه الطريقة للدفع"
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:30
+msgid "Cards"
+msgstr "البطاقات"
+
+#. translators: %s: version number
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:33
+msgid "MyFatoorah Debit/Credit Card payment version %s."
+msgstr "ماي فاتورة للدفع ببطاقة الخصم/الائتمان النسخة رقم %s."
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:34
+msgid "MyFatoorah - Cards"
+msgstr "ماي فاتورة - البطاقات"
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:229
+msgid "You can not disable invoice items option while MyFatoorah Shipping is enabled"
+msgstr "لا يمكنك إيقاف خاصية عرض عناصر الطلب أثناء تفعيل ماي فاتورة للشحن"
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:260
+msgid "MyFatoorah Embedded has been disabled."
+msgstr "تم إيقاف طريقة ماي فاتورة للدفع المباشر."
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:287
+msgid "Please make sure to select New design and List all gateway option to enable Apple Pay Embedded."
+msgstr "الرجاء التأكد من تفعيل التصميم الجديد مع اختيار خاصية سرد جميع طرق الدفع المفعلة في صفحة الدفع لتفعيل خاصية عرض زر أبل باي."
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:303
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:334
+msgid "Error: "
+msgstr "خطأ: "
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:329
+msgid "Supplier code is not active in vendor account, please contact MyFatoorah team to activate it."
+msgstr "كود المورد غير نشط في حساب البائع في ماي فاتورة، يرجى الاتصال بفريق عمل ماي فاتورة لتفعيله."
+
+#: includes/payments/class-wc-gateway-myfatoorah-v2.php:400
+msgid "There are no payment methods available on your account, please contact your account manager."
+msgstr "عذرا: لا توجد أي بوابات دفع في حسابك. تواصل مع مدير الحساب الخاص بك."
+
+#: includes/payments/class-wc-gateway-myfatoorah.php:157
+msgid "please, refund manually for this order"
+msgstr "الرجاء رد الأموال يدويًا لهذا الطلب"
+
+#: includes/payments/class-wc-gateway-myfatoorah.php:162
+msgid "system can't refund order with status "
+msgstr "لا يمكن استرداد الطلب مع الحالة "
+
+#: includes/payments/class-wc-gateway-myfatoorah.php:272
+msgid "Total amount for order #"
+msgstr "المجموع الكلي للطلب #"
+
+#. translators: %s: the product name
+#: includes/payments/class-wc-gateway-myfatoorah.php:380
+msgid "The \"%s\" Item has non number unit price."
+msgstr "سعر المنتج \"%s\" غير رقمي."
+
+#. translators: %s: Payment Code
+#: includes/payments/class-wc-gateway-myfatoorah.php:659
+msgid "MyFatoorah %s has been disabled."
+msgstr "تم إيقاف طريقة ماي فاتورة للدفع %s."
+
+#: includes/payments/class-wc-gateway-myfatoorah.php:668
+#: includes/payments/class-wc-gateway-myfatoorah.php:695
+msgid "MyFatoorah Shipping has been disabled."
+msgstr "تم إيقاف ماي فاتورة للشحن."
+
+#: includes/payments/class-wc-gateway-myfatoorah.php:706
+msgid "Copy this link to your MyFatoorah Account. After that, Copy your Webhook Secret Key from MyFatoorah Account in the above field."
+msgstr "الرجاء نسخ الرابط أعلاه ولصقة في حساب ماي فاتورة. بعد ذلك نسخ مفتاح الويب هوك السري من حساب ماي فاتورة في الحقل أعلاه."
+
+#: includes/payments/class-wc-gateway-myfatoorah.php:718
+msgid "You should add the API key in the \"MyFatoorah - Cards\" payment Settings first."
+msgstr "يجب أولاً إضافة رمز التكامل في إعدادات الدفع \"ماي فاتورة - البطاقات\"."
+
+#: includes/PluginPaymentMyfatoorahWoocommerce.php:95
+msgid "The Order is not found. Please, contact the store admin."
+msgstr "لم يتم العثور على الطلب. من فضلك ، تواصل مع مدير المتجر."
+
+#: includes/PluginShippingMyfatoorahWoocommerce.php:135
+msgid "MyFatoorah: kindly select a country"
+msgstr "ماي فاتورة: الرجاء اختيار دولة"
+
+#: includes/PluginShippingMyfatoorahWoocommerce.php:147
+msgid "Select Town / City"
+msgstr "اختر المدينة أو القرية"
+
+#. translators: %s: version number
+#: includes/shipping/class-wc-shipping-myfatoorah.php:38
+msgid "Shipping via MyFatoorah using DHL/Aramex Shipping Methods version %s."
+msgstr "ماي فاتورة للشحن عبر أرامكس/دي إتش إل النسخة رقم %s."
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:119
+msgid "Kindly, review your MyFatoorah admin configuration due to a wrong entry to get MyFatoorah shipping cities."
+msgstr "الرجاء التأكد من إعدادات ماي فاتورة في منصة مسؤول الموقع حتي تستطيع الحصول على قائمة المدن الخاصة بالشحن."
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:169
+msgid "Please make sure products have dimensions and weight as well to get right MyFatoorah Shipping rates."
+msgstr "الرجاء التأكد من أن سجل المنتجات يحتوي على بيانات الوزن و الأبعاد حتى تستطيع ماي فاتورة من حساب تكلفة الشحن."
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:208
+msgid "MyFatoorah Free Shipping"
+msgstr "شحن ماي فاتورة"
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:223
+msgid "MyFatoorah shipping can not be calculated due to: "
+msgstr "لا يمكن حساب شحن ماي فاتورة للأسباب التالية: "
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:250
+msgid "You should add the API key in the \"MyFatoorah - Cards\" payment Settings first, to enable MyFatoorah Shipping"
+msgstr "يجب أولاً إضافة رمز التكامل في إعدادات الدفع \"ماي فاتورة - البطاقات\"، حتى تتمكن من تفعيل ماي فاتورة للشحن"
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:256
+msgid "You should enable invoice items option in the \"MyFatoorah - Cards\" payment Settings first, to enable MyFatoorah Shipping"
+msgstr "يجب أولاً تفعيل خاصية عرض عناصر الطلب في إعدادات الدفع \"ماي فاتورة - البطاقات\"، حتى تتمكن من تفعيل ماي فاتورة للشحن"
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:263
+msgid "You should select at least one Shipping Method, to enable MyFatoorah Shipping"
+msgstr "يجب أولاً اختبار شركة شحن واحدة على الأقل من شركات النقل، حتى تتمكن من تفعيل ماي فاتورة للشحن"
+
+#: includes/shipping/class-wc-shipping-myfatoorah.php:278
+msgid "You should enable at least one of MyFatoorah payment methods, to enable MyFatoorah Shipping"
+msgstr "يجب أولاً تفعيل طريقة واحدة على الأقل من طرق دفع ماي فاتورة، حتى تتمكن من تفعيل ماي فاتورة للشحن"
+
+#: includes/templates/paymentFields.php:49
+#: build/index.js:1
+msgid "Or "
+msgstr "أو "
+
+#: includes/templates/paymentFields.php:54
+#: build/index.js:1
+msgid "How would you like to pay?"
+msgstr "كيف تريد أن تدفع؟"
+
+#: includes/templates/paymentFields.php:82
+#: build/index.js:1
+msgid "Pay With"
+msgstr "ادفع بواسطة"
+
+#: includes/templates/paymentFields.php:100
+#: build/index.js:1
+msgid "Insert Card Details"
+msgstr "ادخل بيانات البطاقة"
+
+#: includes/templates/paymentFields.php:110
+#: build/index.js:1
+msgid "Pay Now"
+msgstr "ادفع الأن"
+
+#: includes/templates/sectionForm.php:5
+#: build/index.js:1
+msgid "Name On Card"
+msgstr "اسم حامل البطاقة"
+
+#: includes/templates/sectionForm.php:6
+#: build/index.js:1
+msgid "Number"
+msgstr "رقم البطاقة"
+
+#: includes/templates/sectionForm.php:7
+#: build/index.js:1
+msgid "MM / YY"
+msgstr "YY / MM"
+
+#: includes/templates/sectionForm.php:8
+#: build/index.js:1
+msgid "CVV"
+msgstr "الرمز السري"
+
+#: includes/templates/sectionForm.php:48
+#: build/index.js:1
+msgid "Save card number for future payments"
+msgstr "حفظ بيانات البطاقة للاستخدام المستقبلي"
+
+#: includes/templates/sectionForm.php:49
+#: build/index.js:1
+msgid "Use another card"
+msgstr "إضافة رقم بطاقة"
+
+#: includes/templates/sectionForm.php:51
+#: build/index.js:1
+msgid "Delete Card"
+msgstr "حذف البطاقة"
+
+#: includes/templates/sectionForm.php:52
+#: build/index.js:1
+msgid "Are you sure you want to remove this card?"
+msgstr "هل أنت متأكد من حذف البطاقة؟"
+
+#: includes/templates/sectionForm.php:53
+#: build/index.js:1
+msgid "Yes"
+msgstr "موافق"
+
+#: includes/templates/sectionForm.php:54
+#: build/index.js:1
+msgid "No"
+msgstr "غير موافق"
+
+#: myfatoorah-woocommerce.php:114
+msgid "View MyFatoorah documentation"
+msgstr "عرض وثائق ماي فاتورة"
+
+#: myfatoorah-woocommerce.php:115
+msgid "View MyFatoorah API docs"
+msgstr "عرض وثائق التكامل بماي فاتورة"
+
+#: myfatoorah-woocommerce.php:116
+msgid "Visit premium customer support"
+msgstr "قم بالاتصال بقسم الدعم الفني"
+
+#: myfatoorah-woocommerce.php:208
+msgid "MyFatoorah - WooCommerce plugin needs WooCommerce plugin to be installed and active."
+msgstr "يجب تفعيل إضافة الووكومرس أولا لتفعيل إضافة ماي فاتورة."
+
+#: includes/admin/embedded.php:30
+#: includes/admin/v2.php:151
+msgid "AUTHENTICATION_FAILED."
+msgstr "فشلت المصادقة."
