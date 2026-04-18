@@ -1,0 +1,32 @@
+.mf-required{
+    color:red;
+}
+.mf-small {
+    font-size: x-small;
+}
+
+#woocommerce_myfatoorah_v2_resetTheme{
+    color: white;
+    background-color: #40a7cf;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+#woocommerce_myfatoorah_v2_resetTheme:hover{
+    color: #40a7cf;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#woocommerce_myfatoorah_v2_configuration,
+#woocommerce_myfatoorah_v2_options,
+#woocommerce_myfatoorah_v2_frontend,
+#woocommerce_myfatoorah_v2_design,
+#woocommerce_myfatoorah_v2_theme {
+    font-style: italic;
+    text-decoration: underline;
+    padding-top: 15px;
+    font-size: larger;
+
+}

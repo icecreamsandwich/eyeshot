@@ -1,0 +1,218 @@
+== Changelog ==
+
+This file will contains only old changelog. See readme.txt for newer versions.
+
+= 2.2.9 (2025-12-17) =
+- Show the Apple Pay payment for the non-IOS systems
+- Add validation for the Shipping item names
+- Force new design view in upgrading and activation
+- Fix the notice that "Function _load_textdomain_just_in_time was called incorrectly"
+- Move the assets folder to the public folder
+- Move the templates folder inside the includes folder
+- Fix need_setup functionality to avoid unnecessary plugin deactivation
+
+= 2.2.8 (2024-07-14) =
+- Add the WordPress block compatibility
+- Fix the Embedded currency 
+
+= 2.2.7 (2024-03-27) =
+- Refund via MyFatoorah API
+- Change the payment.php to an abstract payment plugin.
+- Move the payment.php, shipping.php, and webhook.php to the "include" folder as plugin classes.
+- Add a new filter to register any new MyFatoorah WooComerce payment as a gateway.
+- Validate the config data with all MyFatoorah payments.
+- Fix the "disable shipping" functionality and let it detect all registered MyFatoorah WooComerce payments using the new filter.
+- Disable shipping if the payment gateways are disabled from the admin payment list.
+- Show only the selected countries in the MyFatoorah Shipping settings for the "Exclude countries from shipping rates" option.
+- Fix Shipping calculation
+- Validate the payment logo link to use HTTPS instead of HTTP.
+- Check each product price to see if it is a number.
+- Change each class-wc-gateway-myfatoorah-XXX to be independent of each other. If no apiKey is set, use the v2Option data.
+- Add a new action for the webhook registration so that a new event handler can be added easily without editing the original code.
+- Add webhook logger file
+- Move the translations from i18n to the languages folder to be able to use WordPress tools for packing the plugin. 
+- Update the translation file after upgrading the plugin.
+- Remove the wp-die function if the WooComerce plugin is not installed or active, and use the admin notice instead. No gateways will be registered until the WooComerce is installed and active. 
+- Add the log backup cron job to backup log files every week.
+- Allow enabling the MyFatoorah Embedded payment if MyFatoorah Cards payment redirects buyers to the invoice page.
+- Add notice for MyFatoorah Embedded payment when disabled.
+- Fix Apple Pay registration
+- Fix the thousand-separator view of the Apple Pay button
+- Translate currencies on the checkout page
+
+= 2.2.6 (2023-10-23) =
+Fix compatibility with the WoodMart theme.
+Fix compatibility with the custom order tables in the WooCommerce feature.
+Fix the product variant in the invoice item.
+Fix view multi gateways view in the pay for order page.
+
+= 2.2.5 (2023-08-23) =
+Add the payment id as a transaction id in the order information
+Check compatibility with High-Performance Order Storage
+Add the store webhook link in the setting page
+
+= 2.2.4 (2023-06-26) =
+Add the google pay payment gateway
+Disable shipping if payment is disabled
+Set the Invoice Expiry from the MyFatoorah account if the Hold stock is disable from WooCommerce settings
+
+= 2.2.2 (2023-05-28) =
+Update the plugin to be compatible with php8.2
+Update Arabic translations
+
+= 2.2.1 (2023-03-01) =
+Hotfix in MyFatoorah config array.
+Fix first install issue
+Design settings
+Allow Sending Supplier code
+Sanitize setting fields
+
+= 2.2.0 (2023-01-04) =
+Integrate with MyFatoorah library 2.2.0
+Add single supplier feature
+Apple pay - client side validation.
+
+= 2.1.1 (2022-11-21) =
+Fix filter payment Data
+Fix Embed payment
+
+2.1.0 (2022-11-10)
+Change release number to be compatible with Semantic Versioning.
+Filter input data.
+Add Apple pay button feature.
+
+= 2.0.3.13 (2022-08-28) =
+Add compatibility with the multi-site store.
+Hot fix for virtual products callback payment.
+
+= 2.0.3.12 (2022-06-06) =
+Fix in new design.
+
+= 2.0.3.11 (2022-05-25) =
+remove the not-found page
+update library
+fix in new design 
+
+= 2.0.3.10 (2022-05-16) =
+Fix new design 
+Fix Arabic translation
+
+= 2.0.3.9 (2022-04-26) =
+Add text for Arabic translation
+
+= 2.0.3.8 (2022-04-21) =
+Fix the loader page.
+
+= 2.0.3.7 (2022-04-20) =
+Fix the new design to include style files for different themes and to include them only if the new-design/embed is enabled
+Add loader page before redirecting to the success/failed page.
+
+= 2.0.3.6 (2022-04-06) =
+Fix a webhook bug so it can work with different server environments.
+
+= 2.0.3.5 (2022-04-03) =
+Add list invoice item option. 
+Calculate Shipping for Variant products.
+Display prices on the MF invoice page according to the "Prices entered with tax" option of the Tax setting.
+
+= 2.0.3.4 (2022-03-10) =
+Fix compatibility with the new WooCommerce version.
+Bug fix in duplicate admin error message
+
+= 2.0.3.3 (2022-03-8) =
+Bug fix in callback URL
+Bug fix in shipping/billing city index
+
+= 2.0.3.2 (2022-02-28) =
+Fix toggling between Embedded and Cards at the admin setting page. 
+Enable 3 decimal pricing only if the MyFatoorah shipping is enabled.
+Fix success payment status for embedded old design. 
+
+= 2.0.3.1 (2022-02-23) =
+Bug fixes
+
+= 2.0.3.0 (2022-02-21) =
+Add the new design feature for both MyFatoorah Cards and Onsite.
+change the admin setting design.
+Fix some bugs.
+
+= 2.0.2.11 (2022-01-05) =
+Enable ApplePay Payment to only IOS systems.
+
+= 2.0.2.10 (2022-01-03) =
+Fix and enhance plugin performance.
+
+= 2.0.2.9 (2021-12-23) =
+Allow selection of vendor's country in the admin settings.
+
+= 2.0.2.8 (2021-11-04) =
+Fix webhook URL to be work with all systems.
+Fix embedded form to be work with shipping and webhook
+
+= 2.0.2.7 (2021-11-01) =
+Adding the new Embedded-Form payment feature.
+Fix direct payment view.
+
+= 2.0.2.6 (2021-10-31) =
+Fix the text-input field for cities of the country that is excluded from the shipping countries list.
+
+= 2.0.2.5 (2021-09-28) =
+Add the plugin version number to the script file URL to avoid caching issue.
+
+= 2.0.2.4 (2021-09-23) =
+Change the shipping/billing text autocomplete input to combo-box select on the checkout page.
+
+= 2.0.2.3 (2021-09-14) =
+Fix webhook validate signature function for requests that contain Arabic letters.
+
+= 2.0.2.2 (2021-09-02) =
+Change the shipping/billing cities to be an auto-complete list.
+Add the save card tokenization option. 
+
+= 2.0.2.1 (2021-08-22) =
+Fix viewing the Apple icon on Opera, Edge, Chrome, and Safari browsers.
+
+= 2.0.2.0 (2021-08-19) =
+* View shipping error if the plugin has a wrong config
+* Fix get shipping rate if the country is selected after loading the page at 1st time
+
+= 2.0.1.9 (2021-08-18) =
+* Prevent loading js code if the shipping plugin is not enabled.
+
+= 2.0.1.8 (2021-08-11) =
+* Prevent enabling payment and shipping plugins if the required fields are empty.
+
+= 2.0.1.7 (2021-08-05) =
+* Fix in MyFatoorah Shipping for first install & add require validation in Shipping configuration for API key & Shipping
+
+= 2.0.1.6 (2021-08-03) =
+* Hide MyFatoorah - Card payment gateway on the checkout page, if there is no payment method enabled in the MyFatoorah portal account with the "List All Enabled Gateways" setting option.
+
+= 2.0.1.5 (2021-07-25) =
+* For single view: hide apple pay icons in the checkout page for non IOS systems.
+
+= 2.0.1.4 (2021-07-15) =
+* Hide apple pay icons in the checkout page for non IOS systems.
+
+= 2.0.1.3 (2021-07-05) =
+* Fix Shipping translation name functionality.
+* Update translation files.
+
+= 2.0.1.2 (2021-07-05) =
+* Add webhook feature in a separate module.
+* Add the check status function to be used in callback and webhook.
+* Update the library.
+* Round price values using the number of decimals in WooCommerce settings.
+* Fix Shipping translation name functionality.
+* Fix shipping title to be used in checkout displaying.
+* Fix the shipping/billing city field to be requied 
+* Show only payment gateways that match the shipping settings.
+* Display necessary Payment information in the order note section at the admin order view.
+* Use important Payment information in the custom field section at the admin order view.
+* Fix the multi-call of plugin creation at the background
+* Fix direct payment template classes 
+
+= 2.0.1.1 (2021-06-06) =
+* Fix in coupon amount
+* Change name of normal & direct payment
+* Add notes in payment configuration

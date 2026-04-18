@@ -1,0 +1,52 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# WordPress uploads (media library – not tracked in git)
+wp-content/uploads/
+
+# WordPress auto-generated / cache files
+wp-content/advanced-cache.php
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/blogs.dir/
+wp-content/uploads/wc-logs/
+
+# Elementor auto-generated CSS
+wp-content/uploads/elementor/
+
+# LiteSpeed cache
+wp-content/litespeed/
+
+# WooCommerce logs
+wp-content/uploads/wc-logs/
+
+# DDEV local config (already in .ddev)
+.ddev/homeadditions/
+.ddev/sequelpro.spf
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# PHP / Composer
+vendor/
+composer.lock
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment files
+.env
+.env.local
+
+# WordPress export files (deploy separately via FTP, not tracked in git)
+homepage-export.xml
